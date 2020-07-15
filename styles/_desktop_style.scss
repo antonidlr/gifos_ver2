@@ -107,7 +107,7 @@ header {
     }
 }
 
-//3. Trending Section
+//3. Trending Section ..............cambiar Tamaño Height!!!!
 .second-header {
     height: 640px;
 
@@ -135,8 +135,9 @@ header {
 }
 
 .hover-gif {
-    z-index: 2;
+    z-index: 3;
     position: relative;
+    top: -275px;
 }
 
 // 3.1 Buttons Gallery Trending Section
@@ -204,7 +205,6 @@ header {
 
 .gif-pic {
 
-    background-color: $green;
     background: {
         image: url("../assets/art_tonydlr.JPG");
         position: center;
@@ -212,7 +212,6 @@ header {
         size: cover;
 
     };
-    
 
     margin: 0 18px;
     p, h3 {
@@ -232,8 +231,6 @@ header {
 }
 
 .gif-pic:hover {
-    
-    background: rgba(87,46,229,0.6);
 
     .b-icon {
         display: flex;
@@ -268,12 +265,50 @@ header {
         margin-top: 120px;
         margin-left: 18px;
     }
+
+    .second-gif {
+        opacity: 0.6;
+    }
 }
 
 .opac {
     opacity: 0.6;
     background: #572EE5;
 }
+
+
+.first-gif {
+    background: {
+        image: url("../assets/art_tonydlr.JPG");
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+
+    };
+}
+
+
+
+// 3.2 GIF - CARD
+
+.gif-card {
+    width: 357px;
+    height: 275px;
+}
+
+.second-gif {
+    position: relative;
+    width: 100%;
+    height: 275px;
+    opacity: 0.6;
+    background: $border;
+    z-index: 2;
+    opacity: 0;
+    
+}
+
+
+
 
 
 
