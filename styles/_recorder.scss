@@ -1,0 +1,28 @@
+@import 'variables';
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-recorder {
+    width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-video {
+    width: 688px;
+    height: 390px;
+    border: 1px solid $border;
+    margin-top: 4px;
+}
+
+.chapter {
+    display: flex;
+    justify-content: center;
+}

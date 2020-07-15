@@ -3,27 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main_style.css">
+    <script src="https://kit.fontawesome.com/f896a62699.js" crossorigin="anonymous"></script>
+    
     <title>Gifos Antonidlr</title>
 </head>
 <body>
     <header>
-        <a href="/index.html"> <img src="" alt="logo gifos"> gifos</a>
-        <nav>
-            <ul>
-                <li>modo nocturno</li>
-                <li>favoritos</li>
-                <li>mis gifos</li>
-                <li><a href="/html/crear_gifos.html"><img src="#" alt="crear gifo"></a></li>
-            </ul>
+        <div class="logo space">
+            <div>
+                <a href="#"><img src="/assets/logo-desktop-modo-noc.svg" alt="logo gifos"><h3>GIFOS</h3></a>
+            </div>
+            
+        </div>
+        <nav class="space">
+            <div class="nav-width">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <div class="list-menu">
+                            <li>Modo Nocturno</li>
+                            <hr>
+                        </div>
+                        
+                        <div class="list-menu">
+                            <li>Favoritos</li>
+                            <hr>
+                        </div>
+                        
+                        <div class="list-menu">
+                            <li>Mis GIFOS</li>
+                            <hr>
+                        </div>
+                        
+                        <div class="list-menu">
+                            <li><button class="crear-gif"><img src="/assets/button-crear-gifo.svg" alt="crear-gifo"></button></a></li>
+                        </div>
+                        
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
-    <div>
-        <img src="" alt="">
-        <img src="" alt="">
-        <div>
-            <div></div>
-            <div>
+    <div class="main-container">
+        <div class="camera-image">
+            <img src="/assets/camara.svg" alt="camera">
+            <img src="/assets/element-luz-camara.svg" alt="luz-camara">
+        </div>
+        
+        <div class="video-recorder">
+            <div class="box-video"></div>
+            <div class="chapter">
                 <div><h2>1</h2></div>
                 <div><h2>2</h2></div>
                 <div><h2>3</h2></div>
@@ -32,15 +67,25 @@
             <button>COMENZAR</button>
             
         </div>
-        <img src="" alt="">
+        <div class="camera-image2">
+            <img src="/assets/pelicula.svg" alt="pelicula">
+        </div>
+        
     </div>
     </main>
+
     <footer>
-        <p>Compartir en:</p>
-        <a href=""><img src="" alt="">Facebook</a>
-        <a href=""><img src="" alt="">Twitter</a>
-        <a href=""><img src="" alt="">Instagram</a>
-        <p>	&copy; GIFOS 2020 All Rights Reserved.</p>
+
+        <p class="first-foo">Compartir en:</p>
+
+        <div>
+            <a href="https://www.facebook.com/antonio.delosrios.923" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/toniodlrios" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/antonidlr/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/antonidlr" target="_blank"><i class="fab fa-github-alt"></i></a>
+        </div>
+        
+        <p class="second-foo">	&copy; GIFOS 2020 All Rights Reserved.</p>
     </footer>
 </body>
 </html>
