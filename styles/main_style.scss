@@ -1,0 +1,395 @@
+@import 'reset';
+@import 'normalize';
+@import 'variables';
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+// Mobile First Mode
+
+// 1. Header Style
+
+body {
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {outline:0;}
+input:focus {outline:0;}
+
+header {
+    border-top: 5px solid $border;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo, nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        
+    }
+    
+}
+
+.space {
+    margin-top: 20px;
+}
+
+.logo a {
+    position: relative;
+    text-decoration: none;
+    margin-left: 22px;
+}
+
+.logo h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: $border;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    z-index: 2;
+}
+
+// 1.1 Menu burger
+
+#menuToggle {
+ display: flex;
+ flex-direction: column;
+ -webkit-user-select: none;
+ user-select: none;
+}
+
+#menuToggle input {
+ display: block;
+ width: 32px;
+ height: 15px;
+ position: absolute;
+ cursor: pointer;
+ right: 12px;
+ opacity: 0;
+ z-index: 2;
+ -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+display: block;
+width: 18px;
+height: 2px;
+margin-bottom: 3px;
+margin-right: 26px;
+position: relative;
+background: $border;
+border-radius: 3px;
+z-index: 1;
+transform-origin: 4px 0px;
+
+transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+           background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+           opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+transform-origin: 0% 100%;
+}
+
+/* 
+* Transform all the slices of hamburger
+* into a crossmark.
+*/
+#menuToggle input:checked ~ span
+{
+opacity: 1;
+transform: rotate(45deg) translate(0px, 1px);
+background: $border;
+}
+
+/*
+* But let's hide the middle one.
+*/
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+opacity: 0;
+transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+* Ohyeah and the last one should go the other direction
+*/
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+transform: rotate(-45deg) translate(0px, 0px);
+}
+#menuToggle input:checked ~ #menu {
+ opacity: 1;
+ visibility: visible;
+}
+
+#menu {
+ opacity: 0;
+ visibility: hidden;
+ width: 100%;
+ height: 100%;
+ background: rgba(87,46,229,0.90);
+ position: absolute;
+ top: 100px;
+ left: 0px;
+ transition: visibility 0s, opacity 0.4s linear;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ 
+ a {
+     cursor: pointer;
+     font-size: 20px;
+     letter-spacing: 0;
+     line-height: 28px;
+     margin-left: 16px;
+ }
+
+ a:active ~ #menu {
+        display: none;
+    }
+
+    li {
+
+        list-style-type: none;
+    }
+}
+
+.list-menu {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    li {
+        font-size: 20px;
+        font-weight: bold;
+        color: $white;
+    }
+
+    hr {
+        width: 41px;
+        height: 0.1px;
+        opacity: 0.5;
+        border: 1px solid $white;
+    }
+}
+
+.crear-gif {
+    color: $white;
+    border: 1px solid $border;
+    height: 54px;
+    width: 54px;
+    background-color: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// 2. Main Section Front Header
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        margin: 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        color: $border;
+        line-height: 36px;
+        padding-left: 44px;
+        padding-right: 44px;
+    }
+
+    span {
+        font-family: 'Roboto', sans-serif;
+        color: $green;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.ilustra-img {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 51px;
+    padding-right: 51px;
+}
+
+#searchbar {
+    height: 22px;
+    background: $white;
+    text-align: left;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 300;
+    width: 100%;
+    border: none;
+    margin-right: 22px;
+     
+}
+
+.inputbar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $border;
+    border-radius: 27px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 55px;
+    
+    .search-button {
+        background-color: $white;
+        background-image: url("../assets/icon-search.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 24px;
+        height: 24px;
+        border: none;
+        margin-right: 20px;
+
+    }
+}
+
+#searchbar:active {
+    .search-button {
+        background-image: url("../assets/button-close.svg");
+    }
+}
+
+.trending {
+    text-align: center;
+    color: $border;
+    line-height: 25px;
+    margin-top: 30px;
+    margin-bottom: 48px;
+    font-size: 18px;
+    h4 {
+        font-weight: bold;
+    }
+}
+
+// 3. Second Header Trending Gifos
+
+.second-header {
+    background-color: $grey;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+        margin-top: 44px;
+        font-size: 25px;
+        color: $border;
+        line-height: 30px;
+        font-weight: bold;
+    }
+    p {
+        margin-top: 9px;
+        margin-bottom: 32px;
+        font-size: 16px;
+        color: $black;
+        text-align: center;
+        line-height: 23px;
+    }
+}
+
+.b-gallery {
+    display: none;
+}
+
+.gif-pic {
+    width: 260px;
+    height: 200px;
+}
+
+.trending-sec {
+    display: none;
+}
+
+
+
+
+//4. Footer
+
+footer {
+    height: 149px;
+    padding-top: 47px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 5px solid $border;
+    
+    .first-foo {
+        font-size: 15px;
+        color: $black;
+        letter-spacing: 0;
+    }
+
+    div {
+        margin-top: 24px;
+        margin-bottom: 48px;
+        a {
+            margin: 0 9px;
+            text-decoration: none;
+            color: inherit;
+            color: $icon;
+        }
+
+        a:hover {
+            color: $border;
+        }
+    }
+
+    .second_foo {
+        font-size: 14px;
+        color: $black;
+        letter-spacing: 0;
+        line-height: 20px;
+        font-weight: bold;
+    }
+
+}
+
+
+
+// Desktop Version
+
+@media screen and (min-width: 830px) {
+    
+    @import 'desktop_style';
+}

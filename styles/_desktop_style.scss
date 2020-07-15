@@ -1,0 +1,302 @@
+//1. Header 
+
+#menuToggle {
+    
+    input {
+        display: none;
+    }
+    span {
+        display: none;
+    }
+}
+
+#menu {
+    opacity: 1;
+    visibility: inherit;
+    background: none;
+    position: inherit;
+    top: 0px;
+    left: 0px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.list-menu {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    margin-right: 45px;
+    
+    li {
+        font-size: 14px;
+        color: $border;
+        letter-spacing: 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    hr {
+      display: none;
+    }
+}
+
+header {
+    justify-content: space-between;
+    nav {
+        width: 50%;
+    }
+}
+
+.nav-width {
+    width: 100%;
+}
+
+.crear-gif {
+    margin-right: 110px;
+}
+
+.crear-gif:hover {
+    img {
+        display: none;
+    }
+    background-color: $border;
+    background-image: url("../assets/button-crear-gifo_white.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+   
+}
+
+.crear-gif:active {
+    img {
+        display: none;
+    }
+    background-color: $b-active;
+    border: $b-active;
+}
+
+.logo {
+    margin-left: 134px;
+}
+
+//2. Search Section
+
+.main-header {
+    h2 {
+        margin-top: 75px;
+        margin-bottom: 25px;
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    #searchbar {
+        width: 551px;
+    }
+
+    .trending {
+        margin-top: 73px;
+        margin-bottom: 0px;
+        br {
+            display: none;
+        }
+        p {
+            margin-bottom: 102px;
+        }
+    }
+}
+
+//3. Trending Section
+.second-header {
+    height: 640px;
+
+    h3 {
+        margin-top: 65px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-top: 14px;
+        margin-bottom: 52px;
+        br {
+            display: none;
+        }
+    }
+}
+
+.gif-pic {
+    width: 357px;
+    height: 275px;
+    img {
+        max-width: 100%;
+        height: 100%;
+    }
+}
+
+.hover-gif {
+    z-index: 2;
+    position: relative;
+}
+
+// 3.1 Buttons Gallery Trending Section
+
+.b-gallery {
+    display: block;
+}
+
+.left {
+
+    margin-right: 4px;
+}
+
+.right {
+    
+    margin-left: 4px;
+}
+
+.trending-gall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-gallery {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $border;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.left {
+    background-image: url("../assets/button-left.svg");
+    
+}
+
+.right {
+    background-image: url("../assets/button-right.svg");
+    
+}
+
+.left:hover {
+    background-color: $border;
+    background-image: url("../assets/button-left_white.svg");
+}
+
+.right:hover {
+    background-color: $border;
+    background-image: url("../assets/button-right-white.svg");
+}
+
+.trending-sec {
+    display: flex;
+    align-items: center;
+}
+
+.t-icons {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 2;
+    position: relative;
+}
+
+.gif-pic {
+
+    background-color: $green;
+    background: {
+        image: url("../assets/art_tonydlr.JPG");
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+
+    };
+    
+
+    margin: 0 18px;
+    p, h3 {
+        display: none;
+    }
+}
+
+.b-icon {
+    display: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    //opacity: 0.7;
+    margin: 10px 10px 10px 0;
+    background: $white;
+    border-radius: 6px;
+}
+
+.gif-pic:hover {
+    
+    background: rgba(87,46,229,0.6);
+
+    .b-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.6;
+    }
+
+    .b-icon:hover {
+        opacity: 1;
+        color: $white;
+    }
+
+    p, h3 {
+        display: block;
+    }
+    h3 {
+        margin-top: 0px;
+        font-size: 16px;
+        color: $white;
+        font-weight: bold;
+    }
+    p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 15px;
+        color: $white;
+        text-align: initial;
+    }
+
+    .title-card {
+        margin-top: 120px;
+        margin-left: 18px;
+    }
+}
+
+.opac {
+    opacity: 0.6;
+    background: #572EE5;
+}
+
+
+
+
+//4. Footer
+
+footer {
+    flex-direction: row;
+    justify-content: space-around;
+
+    .first-foo {
+        margin-left: 156px;
+        font-size: 13px;
+    }
+
+    div {
+        margin: 0;
+        justify-content: center;
+        margin-right: 50%;
+    }
+
+    .second-foo {
+        margin-right: 156px;
+        font-size: 13px;
+    }
+}
