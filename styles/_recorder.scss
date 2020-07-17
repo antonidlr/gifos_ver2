@@ -1,5 +1,10 @@
 @import 'variables';
 
+body {
+
+    font-family: 'Open Sans', sans-serif;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -25,4 +30,79 @@
 .chapter {
     display: flex;
     justify-content: center;
+}
+
+//1. Border Boxes
+.box-video {
+    //position: relative;
+}
+
+.box-border {
+    width: 27px;
+    height: 25px;
+    
+}
+
+.top-b {
+    border-top: 1px solid $green;
+}
+
+.left-b {
+    border-left: 1px solid $green;
+}
+
+.right-b {
+    border-right: 1px solid $green;
+}
+
+.bottom-b {
+    border-bottom: 1px solid $green;
+}
+
+.sm-box-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.sm-bottom {
+    //margin-top: 299px;
+    position: relative;
+    top: -65px;
+}
+
+//1.1 Title First Box Video CREAR GIFOS
+
+.main-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 320px;
+    position: relative;
+    z-index: 2;
+    top: -30px;
+    left: 104px;
+
+    .main-title-1 {
+        
+        font-size: 28px;
+        color: $border;
+        font-weight: 700;
+        text-align: center;
+        line-height: 38px;
+    }
+
+    .main-text-1 {
+        font-size: 16px;
+        color: $black;
+        text-align: center;
+        line-height: 29px;
+
+    }
+
+    span {
+        color: $green;
+    }
 }
