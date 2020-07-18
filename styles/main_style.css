@@ -954,6 +954,11 @@ footer {
     left: -5px;
     top: -14px; }
 
+  .camera-image-2 {
+    position: relative;
+    top: 150px;
+    left: 10px; }
+
   .video-chapter {
     display: flex;
     flex-direction: column;
