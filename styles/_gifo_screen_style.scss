@@ -1,0 +1,87 @@
+//1. Screen Gifo
+
+
+.gif-screen {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 160px;
+    button {
+        background-color: Transparent;
+    }
+
+    .right {
+        margin-left: 25px;
+    }
+
+    .left {
+        margin-right: 25px;
+    }
+}
+
+.gifo-image-max {
+    width: 695px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//2. Title and Icons
+
+.gif-icons-screen {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+}
+
+.text-p1 {
+    color: $black;
+    
+}
+
+.size-s1 {
+    font-size: 15px;
+}
+
+.size-s2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.b-icon-2 {
+    display: block;
+    border: 1px solid $grey-2;
+    border-radius: 6px;
+    border-radius: 6px;
+    opacity: 0.6;
+}
+
+.b-icon-2:hover {
+    opacity: 1;
+}
+
+.icons-gif {
+    display: flex;
+}
+
+.container-icons {
+    width: 695px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//2.1 Button close Gifo Screen
+
+.close-button {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 400px;
+    top: 120px;
+}
