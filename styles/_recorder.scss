@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 
 .video-recorder {
@@ -30,6 +31,7 @@ body {
 .chapter {
     display: flex;
     justify-content: center;
+    margin-top: 24px;
 }
 
 //1. Border Boxes
@@ -105,4 +107,74 @@ body {
     span {
         color: $green;
     }
+}
+
+//1.2 Images CAMERA and MOVIE
+
+.camera-image {
+    position: relative;
+    top: -80px;
+    left: 60px;
+
+}
+
+.camera-light {
+    position: relative;
+    left: -5px;
+    top: -14px;
+}
+
+
+//1.3 Video Chapter ICONS and Buttons
+
+.video-chapter {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    hr {
+        width: 796px;
+        height: 6px;
+        background: $border;
+        border-radius: 5px;
+        border: none;
+        margin-top: 15px;
+    }
+
+    .chapter-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid $border;
+        border-radius: 50%;
+        margin: 0 16px;
+
+        h2{
+            font-size: 18px;
+            color: $border;
+            font-weight: 600;
+        }
+    }
+
+    .start-video {
+        margin-top: 20px;
+        
+        background: $white;
+        border: 1px solid $border;
+        border-radius: 25px;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 600;
+        color: $border;
+        letter-spacing: 0;
+        text-align: center;
+        padding: 18px 27px;
+    }
+
+
 }
