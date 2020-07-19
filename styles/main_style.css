@@ -853,12 +853,9 @@ footer {
       .second-header p br {
         display: none; }
 
-  .gif-pic {
-    width: 357px;
-    height: 275px; }
-    .gif-pic img {
-      max-width: 100%;
-      height: 100%; }
+  .gif-pic img {
+    max-width: 100%;
+    height: 100%; }
 
   .hover-gif {
     z-index: 3;
@@ -987,7 +984,7 @@ footer {
 
   .gif-card {
     width: 357px;
-    height: 275px; }
+    height: 257px; }
 
   .second-gif {
     position: relative;

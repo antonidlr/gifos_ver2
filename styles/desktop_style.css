@@ -1,0 +1,272 @@
+#menuToggle input {
+  display: none; }
+#menuToggle span {
+  display: none; }
+
+#menu {
+  opacity: 1;
+  visibility: inherit;
+  background: none;
+  position: inherit;
+  top: 0px;
+  left: 0px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.list-menu {
+  height: 100%;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 0px;
+  margin-right: 45px; }
+  .list-menu li a {
+    font-size: 14px;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none; }
+  .list-menu li .theme-button {
+    height: 16px;
+    font-size: 14px;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none; }
+  .list-menu hr {
+    display: none; }
+
+header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  header nav {
+    width: 50%; }
+
+.nav-width {
+  width: 100%; }
+
+.crear-gif {
+  margin-right: 110px; }
+
+.crear-gif:hover {
+  background-color: #572EE5;
+  background-image: url("../assets/button-crear-gifo_white.svg");
+  background-repeat: no-repeat;
+  background-position: center; }
+  .crear-gif:hover img {
+    display: none; }
+
+.crear-gif:active {
+  background-color: #9CAFC3;
+  border: #9CAFC3; }
+  .crear-gif:active img {
+    display: none; }
+
+.logo {
+  margin-left: 134px; }
+
+.main-header h2 {
+  margin-top: 75px;
+  margin-bottom: 25px;
+  font-size: 40px;
+  line-height: 50px; }
+.main-header #searchbar {
+  width: 551px; }
+.main-header .trending {
+  margin-top: 73px;
+  margin-bottom: 0px; }
+  .main-header .trending br {
+    display: none; }
+  .main-header .trending p {
+    margin-bottom: 102px; }
+
+.second-header {
+  height: 640px; }
+  .second-header h3 {
+    margin-top: 65px; }
+  .second-header p {
+    font-size: 18px;
+    margin-top: 14px;
+    margin-bottom: 52px; }
+    .second-header p br {
+      display: none; }
+
+.gif-pic img {
+  max-width: 100%;
+  height: 100%; }
+
+.hover-gif {
+  z-index: 3;
+  position: relative;
+  top: -275px; }
+
+.b-gallery {
+  display: block; }
+
+.left {
+  margin-right: 4px; }
+
+.right {
+  margin-left: 4px; }
+
+.trending-gall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.b-gallery {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #572EE5;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.left {
+  background-image: url("../assets/button-left.svg"); }
+
+.right {
+  background-image: url("../assets/button-right.svg"); }
+
+.left:hover {
+  background-color: #572EE5;
+  background-image: url("../assets/button-left_white.svg"); }
+
+.right:hover {
+  background-color: #572EE5;
+  background-image: url("../assets/button-right-white.svg"); }
+
+.trending-sec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.t-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  z-index: 2;
+  position: relative; }
+
+.gif-pic {
+  background-image: url("../assets/art_tonydlr.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 18px; }
+  .gif-pic p, .gif-pic h3 {
+    display: none; }
+
+.b-icon {
+  display: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  margin: 10px 10px 10px 0;
+  background: #FFFFFF;
+  border-radius: 6px; }
+
+.gif-pic:hover .b-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0.6; }
+.gif-pic:hover .b-icon:hover {
+  opacity: 1;
+  color: #FFFFFF; }
+.gif-pic:hover p, .gif-pic:hover h3 {
+  display: block; }
+.gif-pic:hover h3 {
+  margin-top: 0px;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: bold; }
+.gif-pic:hover p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-align: initial; }
+.gif-pic:hover .title-card {
+  margin-top: 120px;
+  margin-left: 18px; }
+.gif-pic:hover .second-gif {
+  opacity: 0.6; }
+
+.opac {
+  opacity: 0.6;
+  background: #572EE5; }
+
+.first-gif {
+  background-image: url("../assets/art_tonydlr.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.gif-card {
+  width: 357px;
+  height: 257px; }
+
+.second-gif {
+  position: relative;
+  width: 100%;
+  height: 275px;
+  opacity: 0.6;
+  background: #572EE5;
+  z-index: 2;
+  opacity: 0; }
+
+footer {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  footer .first-foo {
+    margin-left: 156px;
+    font-size: 13px; }
+  footer div {
+    margin: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 50%; }
+  footer .second-foo {
+    margin-right: 156px;
+    font-size: 13px; }
