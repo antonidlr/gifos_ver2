@@ -22,6 +22,7 @@
     left: 0px;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .list-menu {
@@ -34,12 +35,25 @@
     margin-right: 45px;
     
     li {
-        font-size: 14px;
-        color: $border;
-        letter-spacing: 0;
-        text-align: center;
-        text-transform: uppercase;
-    }
+        a {
+            font-size: 14px;
+            color: $border;
+            letter-spacing: 0;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .theme-button {
+            height: 16px;
+            font-size: 14px;
+            color: $border;
+            letter-spacing: 0;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    } 
 
     hr {
       display: none;

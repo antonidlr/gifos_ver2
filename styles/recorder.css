@@ -1,0 +1,196 @@
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px; }
+
+.video-recorder {
+  width: 800px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.box-video {
+  width: 688px;
+  height: 390px;
+  border: 1px solid #572EE5;
+  margin-top: 4px; }
+
+.chapter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 24px; }
+
+.box-border {
+  width: 27px;
+  height: 25px; }
+
+.top-b {
+  border-top: 1px solid #5ED7C6; }
+
+.left-b {
+  border-left: 1px solid #5ED7C6; }
+
+.right-b {
+  border-right: 1px solid #5ED7C6; }
+
+.bottom-b {
+  border-bottom: 1px solid #5ED7C6; }
+
+.sm-box-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px; }
+
+.sm-bottom {
+  position: relative;
+  top: -65px; }
+
+.main-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 480px;
+  height: 320px;
+  position: relative;
+  z-index: 2;
+  top: -30px;
+  left: 104px; }
+  .main-video .main-title-1 {
+    font-size: 28px;
+    color: #572EE5;
+    font-weight: 700;
+    text-align: center;
+    line-height: 38px; }
+  .main-video .main-text-1 {
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    line-height: 29px; }
+  .main-video span {
+    color: #5ED7C6; }
+
+.camera-image {
+  position: relative;
+  top: -80px;
+  left: 60px; }
+
+.camera-light {
+  position: relative;
+  left: -5px;
+  top: -14px; }
+
+.camera-image-2 {
+  position: relative;
+  top: 150px;
+  left: 10px; }
+
+.video-chapter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .video-chapter hr {
+    width: 796px;
+    height: 6px;
+    background: #572EE5;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px; }
+  .video-chapter .chapter-icon {
+    width: 32px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    border: 1px solid #572EE5;
+    border-radius: 50%;
+    margin: 0 16px; }
+    .video-chapter .chapter-icon h2 {
+      font-size: 18px;
+      color: #572EE5;
+      font-weight: 600; }
+  .video-chapter .start-video {
+    margin-top: 20px;
+    background: #FFFFFF;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 18px 27px; }
+
+.gif-create-2 {
+  background-color: #9CAFC3;
+  background-image: url("../assets/button-crear-gifo_white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none; }
+  .gif-create-2 img {
+    display: none; }
+
+.gif-create-2:hover {
+  background-color: #9CAFC3;
+  background-image: url("../assets/button-crear-gifo_white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none; }
+  .gif-create-2:hover img {
+    display: none; }

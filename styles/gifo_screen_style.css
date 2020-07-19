@@ -1,0 +1,91 @@
+.gif-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 140px; }
+  .gif-screen button {
+    background-color: Transparent; }
+  .gif-screen .right {
+    margin-left: 25px; }
+  .gif-screen .left {
+    margin-right: 25px; }
+
+.gifo-image-max {
+  width: 695px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.gif-icons-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 27px; }
+
+.text-p1 {
+  color: #000000; }
+
+.size-s1 {
+  font-size: 15px; }
+
+.size-s2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 6px; }
+
+.b-icon-2 {
+  display: block;
+  border: 1px solid #CED7E1;
+  border-radius: 6px;
+  border-radius: 6px;
+  opacity: 0.6; }
+
+.b-icon-2:hover {
+  opacity: 1; }
+
+.icons-gif {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.container-icons {
+  width: 695px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.close-button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 400px;
+  top: 120px; }

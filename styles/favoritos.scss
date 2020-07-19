@@ -1,0 +1,64 @@
+@import 'variables';
+
+//1. Favoritos
+
+.list-menu {
+    li {
+        .fav-link {
+            color: $b-active;
+    }
+    
+    }
+}
+
+
+.container-favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 11px;
+
+    h3 {
+        font-size: 25px;
+        color: $border;
+        line-height: 30px;
+        font-weight: bold;
+        margin-top: 6px;
+    }
+}
+
+.save-screen-favoritos {
+    
+    padding: 112px 0px 141px 0px;
+
+    h4 {
+        font-size: 24px;
+        font-weight: bold;
+        color: $green;
+        text-align: center;
+        line-height: 31px;
+        margin-top: 24px;
+    }
+}
+
+.logo-favoritos {
+    width: 150px;
+    height: 150px;
+    background: $grey;
+    border-radius: 50%;
+    img {
+        width: 76px;
+        height: auto;
+    }
+}
+
+
+

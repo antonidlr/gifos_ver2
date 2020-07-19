@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/main_style.css">
+    <link rel="stylesheet" href="/styles/favoritos.css">
     <script src="https://kit.fontawesome.com/f896a62699.js" crossorigin="anonymous"></script>
 
     <title>Gifos Antonidlr</title>
@@ -14,7 +15,7 @@
     <header>
         <div class="logo space">
             <div>
-                <a href="/index.html"><img src="assets/logo-desktop-modo-noc.svg" alt="logo gifos"><h3>GIFOS</h3></a>
+                <a href="/index.html"><img src="/assets/logo-desktop-modo-noc.svg" alt="logo gifos"><h3>GIFOS</h3></a>
             </div>
             
         </div>
@@ -31,8 +32,8 @@
                             <hr>
                         </div>
                         
-                        <div class="list-menu">
-                            <li><a href="/html/favoritos.html">Favoritos</a></li>
+                        <div class="list-menu ">
+                            <li><a class="fav-link" href="/html/favoritos.html">Favoritos</a></li>
                             <hr>
                         </div>
                         
@@ -42,7 +43,7 @@
                         </div>
                         
                         <div class="list-menu">
-                            <li><button class="crear-gif"><img src="assets/button-crear-gifo.svg" alt="crear-gifo"></button></li>
+                            <li><button class="crear-gif"><img src="/assets/button-crear-gifo.svg" alt="crear-gifo"></button></li>
                         </div>
                         
                     </ul>
@@ -51,23 +52,20 @@
         </nav>
     </header>
     <main>
-        <section class="main-header">
-            <h2>Inspírate, busca, guarda, y crea <br> los mejores <span>GIFOS</span></h2>
-            <div class="ilustra-img">
-                <img src="assets/ilustra_header.svg" alt="gifos main image">
+        <section class="container-favoritos">
+            <div class="title-favoritos">
+                <img src="/assets/icon-favoritos.svg" alt="favoritos">
+                <h3>Favoritos</h3>
             </div>
-            
-            <form action="">
-                <div class="inputbar">
-                    <input type="text" name="mainsearchbar" id="searchbar" placeholder="Busca GIFOS y más">
-                    <button class="search-button"></button>
+        </section>
+        <section class="gifos-favoritos center">
+            <div class="save-screen-favoritos center">
+                <div class="logo-favoritos center">
+                    <img src="/assets/icon-favoritos.svg" alt="icon-favoritos">
                 </div>
-                
-            </form>
-            <div class="trending">
-                <h4>Trending:</h4>
-                <p>Reactions, Entertainment, <br> Sports, Stickers, Artists</p>
+                <h4>"¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí!"</h4>
             </div>
+
         </section>
         <section class="second-header">
             <h3>Trending GIFOS</h3>
@@ -81,9 +79,9 @@
                         <div class="hover-gif">
                             <div>
                                 <div class="t-icons">
-                                    <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
-                                    <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
-                                    <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-fav-hover.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-download.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-max.svg" alt="icon fav"></button>
                                 </div>
                             </div>
                             <div class="title-card">
@@ -102,9 +100,9 @@
                         <div class="hover-gif">
                             <div>
                                 <div class="t-icons">
-                                    <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
-                                    <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
-                                    <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-fav-hover.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-download.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-max.svg" alt="icon fav"></button>
                                 </div>
                             </div>
                             <div class="title-card">
@@ -123,9 +121,9 @@
                         <div class="hover-gif">
                             <div>
                                 <div class="t-icons">
-                                    <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
-                                    <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
-                                    <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-fav-hover.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-download.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="/assets/icon-max.svg" alt="icon fav"></button>
                                 </div>
                             </div>
                             <div class="title-card">
