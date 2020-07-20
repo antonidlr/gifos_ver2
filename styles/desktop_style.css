@@ -109,15 +109,6 @@ header {
     .second-header p br {
       display: none; }
 
-.gif-pic img {
-  max-width: 100%;
-  height: 100%; }
-
-.hover-gif {
-  z-index: 3;
-  position: relative;
-  top: -275px; }
-
 .b-gallery {
   display: block; }
 
@@ -177,13 +168,35 @@ header {
   z-index: 2;
   position: relative; }
 
+.hover-gif {
+  z-index: 3;
+  position: relative;
+  top: -275px; }
+
+.gif-card {
+  width: 357px;
+  height: 275px; }
+
+.gif-card-small {
+  width: 260px;
+  height: 200px; }
+
+.second-gif {
+  position: relative;
+  width: 100%;
+  height: 275px;
+  opacity: 0.6;
+  background: #572EE5;
+  z-index: 2;
+  opacity: 0; }
+
 .gif-pic {
   background-image: url("../assets/art_tonydlr.JPG");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 18px; }
-  .gif-pic p, .gif-pic h3 {
+  .gif-pic .title-card {
     display: none; }
 
 .b-icon {
@@ -191,7 +204,7 @@ header {
   border: none;
   width: 32px;
   height: 32px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 0px 0;
   background: #FFFFFF;
   border-radius: 6px; }
 
@@ -209,7 +222,7 @@ header {
 .gif-pic:hover .b-icon:hover {
   opacity: 1;
   color: #FFFFFF; }
-.gif-pic:hover p, .gif-pic:hover h3 {
+.gif-pic:hover .title-card {
   display: block; }
 .gif-pic:hover h3 {
   margin-top: 0px;
@@ -223,33 +236,10 @@ header {
   color: #FFFFFF;
   text-align: initial; }
 .gif-pic:hover .title-card {
-  margin-top: 120px;
+  margin-top: 139px;
   margin-left: 18px; }
 .gif-pic:hover .second-gif {
   opacity: 0.6; }
-
-.opac {
-  opacity: 0.6;
-  background: #572EE5; }
-
-.first-gif {
-  background-image: url("../assets/art_tonydlr.JPG");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-
-.gif-card {
-  width: 357px;
-  height: 257px; }
-
-.second-gif {
-  position: relative;
-  width: 100%;
-  height: 275px;
-  opacity: 0.6;
-  background: #572EE5;
-  z-index: 2;
-  opacity: 0; }
 
 footer {
   -webkit-box-orient: horizontal;

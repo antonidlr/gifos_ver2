@@ -142,22 +142,6 @@ header {
     }
 }
 
-//3.1.1 Size GIFO CARD Trending .............
-
-.gif-pic {
-
-    img {
-        max-width: 100%;
-        height: 100%;
-    }
-}
-
-.hover-gif {
-    z-index: 3;
-    position: relative;
-    top: -275px;
-}
-
 // 3.1 Buttons Gallery Trending Section
 
 .b-gallery {
@@ -209,6 +193,8 @@ header {
     background-image: url("../assets/button-right-white.svg");
 }
 
+//3.1.1 Size GIFO CARD Trending .............
+
 .trending-sec {
     display: flex;
     align-items: center;
@@ -221,8 +207,33 @@ header {
     position: relative;
 }
 
-.gif-pic {
+.hover-gif {
+    z-index: 3;
+    position: relative;
+    top: -275px;
+}
 
+.gif-card {
+    width: 357px;
+    height: 275px;
+}
+
+.gif-card-small {
+    width: 260px;
+    height: 200px;
+}
+
+.second-gif {
+    position: relative;
+    width: 100%;
+    height: 275px;
+    opacity: 0.6;
+    background: $border;
+    z-index: 2;
+    opacity: 0;
+}
+
+.gif-pic {
     // IMAGE to be replace from GIF url API
     background: {
         image: url("../assets/art_tonydlr.JPG");
@@ -233,7 +244,7 @@ header {
     };
 
     margin: 0 18px;
-    p, h3 {
+    .title-card {
         display: none;
     }
 }
@@ -243,8 +254,7 @@ header {
     border: none;
     width: 32px;
     height: 32px;
-    //opacity: 0.7;
-    margin: 10px 10px 10px 0;
+    margin: 10px 10px 0px 0;
     background: $white;
     border-radius: 6px;
 }
@@ -263,7 +273,7 @@ header {
         color: $white;
     }
 
-    p, h3 {
+    .title-card {
         display: block;
     }
     h3 {
@@ -281,7 +291,7 @@ header {
     }
 
     .title-card {
-        margin-top: 120px;
+        margin-top: 139px;
         margin-left: 18px;
     }
 
@@ -290,46 +300,8 @@ header {
     }
 }
 
-.opac {
-    opacity: 0.6;
-    background: #572EE5;
-}
-
-
-.first-gif {
-    background: {
-        image: url("../assets/art_tonydlr.JPG");
-        position: center;
-        repeat: no-repeat;
-        size: cover;
-
-    };
-}
-
-
-
-// 3.2 GIF - CARD
-
-.gif-card {
-    width: 357px;
-    height: 257px;
-}
-
-.second-gif {
-    position: relative;
-    width: 100%;
-    height: 275px;
-    opacity: 0.6;
-    background: $border;
-    z-index: 2;
-    opacity: 0;
-    
-}
-
-
-
-
-
+// GIF CARD Trendind - size 357, 275 / margin 139, 18
+// GIF CARD Search - size 260, 200 / margin 90, 12
 
 
 //4. Footer
