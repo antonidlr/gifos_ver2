@@ -326,3 +326,124 @@ footer {
         font-size: 13px;
     }
 }
+
+
+//5. Section Active Main Search 
+
+.active-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    hr {
+        width: 338px;
+    }
+}
+
+.line-div {
+    height: 0.1px;
+    opacity: 0.5;
+    border: 1px solid #9CAFC3;
+    margin: 0;
+}
+
+.lin-1 {
+    margin-bottom: 14px;
+}
+
+.lin-2 {
+    margin-bottom: 80px;
+}
+
+.search-box-input {
+    width: 551px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 27px;
+    margin-bottom: 55px;
+    padding-bottom: 8px;
+
+    hr {
+        width: 505px;
+    }
+    
+}
+
+.box-div-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 19px;
+
+    input {
+        border: none;
+    }
+}
+
+.close-button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 18px;
+    background: $white;
+    border: none;
+}
+
+.first-search-1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 10px 0px;
+}
+
+.icon-s1 {
+    margin-left: 20px;
+    font-size: 15px;
+    
+
+}
+
+.suggestions-1 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 0px 10px 0px;
+
+    .button-sug-1 {
+        color: $b-active;
+        border: none;
+        background: $white;
+    }
+}
+
+.button-search-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: $white;
+    
+}
+
+.icon-s3 {
+    margin-right: 4px;
+}
+
+::placeholder {
+    color: $b-active;
+}
+
+.icon-s2 {
+    width: 19px;
+    height: 19px;
+    margin-left: 24px;
+}

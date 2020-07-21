@@ -299,12 +299,6 @@ transform: rotate(-45deg) translate(0px, 0px);
     }
 }
 
-#searchbar:active {
-    .search-button {
-        background-image: url("../assets/button-close.svg");
-    }
-}
-
 .trending {
     text-align: center;
     color: $border;
