@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'card_style';
 
 
 //1. Header 
@@ -238,7 +239,7 @@ header {
 .gif-pic {
     
     background: {
-        image: url("../assets/art_tonydlr.JPG");
+        //image: url("../assets/art_tonydlr.JPG");
         position: center;
         repeat: no-repeat;
         size: cover;
