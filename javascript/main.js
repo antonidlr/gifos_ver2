@@ -14,7 +14,7 @@ function getUserInput () {
 
 bSearch.addEventListener('click', () => {
     
-    searchGif(urlTrending, getUserInput());
+    searchGif(urlApi, getUserInput());
 
 });
 
@@ -51,6 +51,7 @@ function searchGif(url, input) {
     apiSearch(url, input)
     .then((data) => {
         const resp = data;
+        dataArray(resp.data);
         console.log(resp.data);
         console.log(resp.meta);
         console.log(resp.meta.status);
@@ -59,7 +60,79 @@ function searchGif(url, input) {
 
 //4. Crear Card con GIF
 
-let cardMain = document.getElementById('card__main');
-let cardTest = cardMain;
-cardTest.setAttribute("id","newgifocard");
-cardTest.classList.add('imggifo'+'hola');
+
+// cardTest.classList.add('imggifo'+'hola');
+
+
+//5. Manipulating de DOM with APi Data response
+
+const dataArray = (resp) => {
+    const container = document.getElementsByClassName('container-search')[0];
+    container.innerHTML = "";
+    let num = 0;
+    resp.forEach(function(data){
+        cardTest = createCard();
+        const imageUrl = data.images.original.url;
+        console.log(imageUrl);
+        cardTest.style.backgroundImage = "url('"+imageUrl+"')";
+        
+        container.append(cardTest);
+        
+        num++;
+
+    })
+
+}
+
+//6. Creating Card Showing Small GIF Screen Gallery After Search
+
+const createCard = () => {
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+    const div3 = document.createElement('div');
+    const div4 = document.createElement('div');
+    const div5 = document.createElement('div');
+    const button_1 = document.createElement('button');
+    const button_2 = document.createElement('button');
+    const button_3 = document.createElement('button');
+    const img_1 = document.createElement('img');
+    const img_2 = document.createElement('img');
+    const img_3 = document.createElement('img');
+    const p_1 = document.createElement('p');
+    const h_1 = document.createElement('h3');
+    div1.appendChild(div2);
+    div1.appendChild(div3);
+    div3.appendChild(div4);
+    div3.appendChild(div5);
+    div4.appendChild(button_1);
+    div4.appendChild(button_2);
+    div4.appendChild(button_3);
+    div5.appendChild(p_1);
+    div5.appendChild(h_1);
+    button_1.appendChild(img_1);
+    button_2.appendChild(img_2);
+    button_3.appendChild(img_3);
+
+    div1.classList.add('gif-card', 'gif-pic', 'card__screen');
+    div2.classList.add('second-gif');
+    div3.classList.add('hover-gif');
+    div4.classList.add('t-icons');
+    div5.classList.add('title-card');
+    button_1.classList.add('b-icon');
+    button_2.classList.add('b-icon');
+    button_3.classList.add('b-icon');
+    p_1.setAttribute('id','user-gif');
+    h_1.setAttribute('id','title-gif');
+
+    button_1.getElementsByTagName('img')[0].src = "/assets/icon-fav-hover.svg";
+    button_2.getElementsByTagName('img')[0].src = "assets/icon-download.svg";
+    button_3.getElementsByTagName('img')[0].src = "assets/icon-max.svg";
+
+    return div1;
+}
+
+//7. Trending Section Gallery
+
+
+
+
