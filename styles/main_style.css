@@ -613,7 +613,8 @@ header {
   font-weight: 300;
   width: 100%;
   border: none;
-  margin-right: 22px; }
+  margin-right: 22px;
+  margin-left: 54px; }
 
 .inputbar {
   height: 50px;
@@ -629,8 +630,7 @@ header {
   border: 1px solid #572EE5;
   border-radius: 27px;
   margin-left: 20px;
-  margin-right: 20px;
-  padding-left: 55px; }
+  margin-right: 20px; }
   .inputbar .search-button {
     background-color: #FFFFFF;
     background-image: url("../assets/icon-search.svg");
@@ -829,8 +829,6 @@ footer {
     margin-bottom: 25px;
     font-size: 40px;
     line-height: 50px; }
-  .main-header #searchbar {
-    width: 551px; }
   .main-header .trending {
     margin-top: 73px;
     margin-bottom: 0px; }
@@ -838,6 +836,9 @@ footer {
       display: none; }
     .main-header .trending p {
       margin-bottom: 102px; }
+
+  .inputbar {
+    width: 551px; }
 
   .second-header {
     height: 640px; }

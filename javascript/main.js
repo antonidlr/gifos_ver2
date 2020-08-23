@@ -1,7 +1,12 @@
 //1. Tomar el valor de busqueda para GIFOS
 
 let mainSearch = document.getElementById('searchbar');
-let bSearch = document.getElementById('search__1'); 
+let bSearch = document.getElementById('search__1');
+const inputTitle = document.getElementsByClassName('active-title'); 
+
+const gifsTrend = []; //Array para Trending Carrusel
+const trendingSection = document.querySelector('.trending-gall');
+const activeSection = document.querySelector('.active-search');
 
 // Get User Input Data GIFO
 
@@ -15,6 +20,7 @@ function getUserInput () {
 bSearch.addEventListener('click', () => {
     
     searchGif(urlApi, getUserInput());
+    inputTitle[0].innerText = getUserInput();
 
 });
 
@@ -23,7 +29,8 @@ bSearch.addEventListener('click', () => {
 mainSearch.addEventListener('keyup', (e) => {
 
     if(e.which === 13) {
-        console.log(getUserInput());
+        searchGif(urlApi, getUserInput());
+        inputTitle[0].innerText = getUserInput();
     }
 });
 
@@ -51,11 +58,25 @@ function searchGif(url, input) {
     apiSearch(url, input)
     .then((data) => {
         const resp = data;
-        dataArray(resp.data);
+        dataArrayScreen(resp.data);
         console.log(resp.data);
         console.log(resp.meta);
         console.log(resp.meta.status);
-    })
+    });
+}
+
+function searchTren(url) {
+    apiSearch(url, '')
+    .then((data) => {
+        const resp = data;
+        console.log(resp.data);
+        console.log(resp.data.length);
+        arrayTrending(resp.data);
+        if (resp.meta.status == 200) {
+            createTrendCards();
+        }
+    });
+    
 }
 
 //4. Crear Card con GIF
@@ -66,22 +87,53 @@ function searchGif(url, input) {
 
 //5. Manipulating de DOM with APi Data response
 
-const dataArray = (resp) => {
+const dataArrayScreen = (resp) => {
     const container = document.getElementsByClassName('container-search')[0];
     container.innerHTML = "";
     let num = 0;
     resp.forEach(function(data){
-        cardTest = createCard();
+        const cardTest = createCard();
         const imageUrl = data.images.original.url;
         console.log(imageUrl);
         cardTest.style.backgroundImage = "url('"+imageUrl+"')";
-        
+
+        if(data.username == "") {
+            cardTest.getElementsByTagName('p')[0].innerText = 'GIPHY';
+        } else {
+            cardTest.getElementsByTagName('p')[0].innerText = data.username.toUpperCase();
+        }
+        cardTest.getElementsByTagName('h3')[0].innerText = data.title.split(' GIF')[0];
+
         container.append(cardTest);
         
         num++;
 
     })
 
+}
+
+const arrayTrending = (resp) => {
+    /*
+    const container = document.querySelector('.trending-gall');
+    container.innerHTML = ""; */
+    resp.forEach(function(data){
+        const gifObject = {
+            imageUrl: 'url',
+            user: 'User',
+            title: 'Title',
+            like: false
+        }
+        gifObject.imageUrl = data.images.original.url;
+        if(data.username == "") {
+            gifObject.user = 'GIPHY';
+        } else {
+            gifObject.user = data.username;
+        }
+        gifObject.title = data.title.split(' GIF')[0];
+        gifsTrend.push(gifObject);
+    })
+
+    console.log(resp.length);
 }
 
 //6. Creating Card Showing Small GIF Screen Gallery After Search
@@ -121,8 +173,6 @@ const createCard = () => {
     button_1.classList.add('b-icon');
     button_2.classList.add('b-icon');
     button_3.classList.add('b-icon');
-    p_1.setAttribute('id','user-gif');
-    h_1.setAttribute('id','title-gif');
 
     button_1.getElementsByTagName('img')[0].src = "/assets/icon-fav-hover.svg";
     button_2.getElementsByTagName('img')[0].src = "assets/icon-download.svg";
@@ -133,6 +183,22 @@ const createCard = () => {
 
 //7. Trending Section Gallery
 
+window.addEventListener('load', (event) => {
+    
+    searchTren(urlTrending);
+    trendingSection.innerHTML = "";
+    activeSection.style.display = 'none';
+  
+});
 
 
+function createTrendCards () {
+    for(let i = 0; i < 3; i++) {
+        const cardTest = createCard();
+        cardTest.style.backgroundImage = "url('" + gifsTrend[i].imageUrl + "')";
+        cardTest.getElementsByTagName('p')[0].innerText = gifsTrend[i].user.toUpperCase();
+        cardTest.getElementsByTagName('h3')[0].innerText = gifsTrend[i].title;
+        trendingSection.append(cardTest);
+    }
+}
 

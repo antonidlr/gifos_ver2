@@ -88,8 +88,6 @@ header {
   margin-bottom: 25px;
   font-size: 40px;
   line-height: 50px; }
-.main-header #searchbar {
-  width: 551px; }
 .main-header .trending {
   margin-top: 73px;
   margin-bottom: 0px; }
@@ -97,6 +95,9 @@ header {
     display: none; }
   .main-header .trending p {
     margin-bottom: 102px; }
+
+.inputbar {
+  width: 551px; }
 
 .second-header {
   height: 640px; }
