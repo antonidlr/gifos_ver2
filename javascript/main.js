@@ -6,7 +6,14 @@ const inputTitle = document.getElementsByClassName('active-title');
 
 const gifsTrend = []; //Array para Trending Carrusel
 const trendingSection = document.querySelector('.trending-gall');
+
 const activeSection = document.querySelector('.active-search');
+const barSuggestions = document.querySelector('.search-box-input');
+const closeInput = document.querySelector('.close-button');
+const inputSection = document.querySelector('.inputbar');
+const trendingText = document.querySelector('.trending');
+const lineDiv = document.querySelector('.lin-2');
+const titleGifs = document.getElementsByClassName('active-title');
 
 // Get User Input Data GIFO
 
@@ -21,6 +28,8 @@ bSearch.addEventListener('click', () => {
     
     searchGif(urlApi, getUserInput());
     inputTitle[0].innerText = getUserInput();
+    hideMainbar();
+    showBarSuggestions();
 
 });
 
@@ -31,6 +40,8 @@ mainSearch.addEventListener('keyup', (e) => {
     if(e.which === 13) {
         searchGif(urlApi, getUserInput());
         inputTitle[0].innerText = getUserInput();
+        hideMainbar();
+        showBarSuggestions();
     }
 });
 
@@ -79,13 +90,7 @@ function searchTren(url) {
     
 }
 
-//4. Crear Card con GIF
-
-
-// cardTest.classList.add('imggifo'+'hola');
-
-
-//5. Manipulating de DOM with APi Data response
+//4. Manipulating de DOM with APi Data response
 
 const dataArrayScreen = (resp) => {
     const container = document.getElementsByClassName('container-search')[0];
@@ -136,7 +141,7 @@ const arrayTrending = (resp) => {
     console.log(resp.length);
 }
 
-//6. Creating Card Showing Small GIF Screen Gallery After Search
+//5. Creating Card Showing Small GIF Screen Gallery After Search
 
 const createCard = () => {
     const div1 = document.createElement('div');
@@ -181,13 +186,12 @@ const createCard = () => {
     return div1;
 }
 
-//7. Trending Section Gallery
+//6. Trending Section Gallery
 
 window.addEventListener('load', (event) => {
     
     searchTren(urlTrending);
     trendingSection.innerHTML = "";
-    activeSection.style.display = 'none';
   
 });
 
@@ -200,5 +204,29 @@ function createTrendCards () {
         cardTest.getElementsByTagName('h3')[0].innerText = gifsTrend[i].title;
         trendingSection.append(cardTest);
     }
+}
+
+
+//7. INPUT CYCLE
+
+
+//.search-box-input
+//.lin-2
+//.active-title
+//.b-see-more
+//.search-again
+
+function hideMainbar () {
+    inputSection.style.display = 'none';
+    trendingText.style.display = 'none';
+
+}
+
+function showBarSuggestions () {
+    barSuggestions.style.display = 'flex';
+    lineDiv.style.display = 'block';
+    titleGifs[0].style.display = 'block';
+    mainSearch.style.marginLeft = '0px';
+    document.querySelector('.box-div-1').appendChild(mainSearch);
 }
 

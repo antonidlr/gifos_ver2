@@ -109,9 +109,6 @@ header {
         line-height: 50px;
     }
 
-    #searchbar {
-        
-    }
 
     .trending {
         margin-top: 73px;
@@ -337,7 +334,7 @@ footer {
 //.......................................
 //6. Nueva Busqueda
 .search-again {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -364,6 +361,17 @@ footer {
     }
     text-align: center;
 }
+
+// Hide Sections when updating Website
+
+.search-box-input {
+    display: none;
+}
+
+.lin-2 {
+    display: none;
+}
+
 
 
 

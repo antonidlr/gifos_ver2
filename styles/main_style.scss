@@ -273,8 +273,25 @@ transform: rotate(-45deg) translate(0px, 0px);
     border: none;
     margin-right: 22px;
     margin-left: 54px;
+    outline: none;
      
 }
+
+#searchbar:active {
+    background: $white;
+}
+
+//INput background
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+} 
+
 
 .inputbar {
     height: 50px;

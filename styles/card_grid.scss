@@ -31,7 +31,7 @@
 .search-box-input {
     width: 551px;
     height: auto;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -52,6 +52,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 19px;
+    width: 100%;
 
     input {
         border: none;
@@ -121,6 +122,7 @@
 }
 
 .active-title {
+    display: none;
     font-size: 40px;
     font-weight: bold;
     color: $border;
@@ -170,6 +172,7 @@
 }
 
 .b-see-more {
+    display: none;
     margin-bottom: 79px;
     border: 1px solid #572EE5;
     border-radius: 25px;
