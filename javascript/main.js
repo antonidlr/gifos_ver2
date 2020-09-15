@@ -15,6 +15,10 @@ const trendingText = document.querySelector('.trending');
 const lineDiv = document.querySelector('.lin-2');
 const titleGifs = document.getElementsByClassName('active-title');
 
+//Suggestions
+const btnSuggestion = document.getElementsByClassName('button-search-2');
+const btnText = document.getElementsByClassName('button-sug-1');
+
 // Get User Input Data GIFO
 
 function getUserInput () {
@@ -30,6 +34,7 @@ bSearch.addEventListener('click', () => {
     inputTitle[0].innerText = getUserInput();
     hideMainbar();
     showBarSuggestions();
+    
 
 });
 
@@ -96,6 +101,8 @@ const dataArrayScreen = (resp) => {
     const container = document.getElementsByClassName('container-search')[0];
     container.innerHTML = "";
     let num = 0;
+    addSuggestions(resp);
+    
     resp.forEach(function(data){
         const cardTest = createCard();
         const imageUrl = data.images.original.url;
@@ -230,3 +237,31 @@ function showBarSuggestions () {
     document.querySelector('.box-div-1').appendChild(mainSearch);
 }
 
+function closeSuggestions () {
+    barSuggestions.style.display = 'none';
+    inputSection.style.display = 'flex';
+}
+
+closeInput.addEventListener('click', () => {
+    closeSuggestions();
+})
+
+//8. Input Suggestions Search
+
+function addSuggestions (resp) {
+
+    for(let i = 0; i < 4; i++) {
+        
+        btnText[i].textContent = resp[i].title;
+    }
+
+}
+
+document.querySelectorAll('.btn').forEach(item => {
+    item.addEventListener('click', e => {
+        contProd++;
+        localStorage.setItem('contProd', contProd);
+        contador.innerText = " " + contProd;
+        //funcion que agrega los productos a un array
+    });
+});

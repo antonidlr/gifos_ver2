@@ -42,7 +42,7 @@
                         </div>
                         
                         <div class="list-menu">
-                            <li><button class="crear-gif"><img src="/assets/button-crear-gifo.svg" alt="crear-gifo"></button></li>
+                            <li><button class="crear-gif" onclick="window.location.href='/html/crear_gifos.html'"><img src="/assets/button-crear-gifo.svg" alt="crear-gifo"></button></li>
                         </div>
                         
                     </ul>
@@ -79,6 +79,7 @@
                     <div class="chapter-icon"><h2>1</h2></div>
                     <div class="chapter-icon"><h2>2</h2></div>
                     <div class="chapter-icon"><h2>3</h2></div>
+                    <p>00:00:00</p>
                 </div>
                 <hr>
                 <button class="start-video">COMENZAR</button>
@@ -105,5 +106,9 @@
         
         <p class="second-foo">	&copy; GIFOS 2020 All Rights Reserved.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" ></script>
+    <script defer src="/javascript/crear_gifo.js"></script>
 </body>
 </html>
