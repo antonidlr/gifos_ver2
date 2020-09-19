@@ -54,7 +54,7 @@ mainSearch.addEventListener('keyup', (e) => {
 
 //2. API from Giphy
 
-const apiKey = 'fY0DV3ScDCdATmHGEB888sSrIs2klqUD';
+const apiKey = '3IXsNj5VZwIO7aLYIaWASyWQyLliVJk4';
 const urlApi = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=`;
 const urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25&rating=G`;
 

@@ -201,9 +201,23 @@ body {
         color: $border;
         letter-spacing: 0;
         text-align: center;
-        padding: 18px 27px;
+        padding: 18px 10px;
     }
 
+    .chapter-repeat {
+        display: none;
+        background: $white;
+        border: none;
+        border-bottom: 2px solid $green;
+        font-size: 14px;
+        font-weight: bold;
+        color: $border;
+        letter-spacing: 0;
+        text-align: center;
+        order: -1;
+        position: absolute;
+        right: 0;
+    }
 
 }
 

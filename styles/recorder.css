@@ -197,7 +197,22 @@ body {
     color: #572EE5;
     letter-spacing: 0;
     text-align: center;
-    padding: 18px 27px; }
+    padding: 18px 10px; }
+  .video-chapter .chapter-repeat {
+    display: none;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 2px solid #5ED7C6;
+    font-size: 14px;
+    font-weight: bold;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    position: absolute;
+    right: 0; }
 
 .gif-create-2 {
   background-color: #9CAFC3;
