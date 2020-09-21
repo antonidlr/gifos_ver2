@@ -19,6 +19,8 @@ html {
 body {
 
     font-family: 'Open Sans', sans-serif;
+
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 button {
@@ -29,7 +31,7 @@ button:focus {outline:0;}
 input:focus {outline:0;}
 
 header {
-    border-top: 5px solid $border;
+    border-top: 5px solid var(--border2);
     height: 95px;
     display: flex;
     align-items: center;
@@ -57,7 +59,7 @@ header {
 .logo h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: $border;
+    color: var(--border);
     font-weight: bold;
     position: absolute;
     top: -15px;
@@ -217,7 +219,7 @@ transform: rotate(-45deg) translate(0px, 0px);
 
 .crear-gif {
     color: $white;
-    border: 1px solid $border;
+    border: 1px solid var(--border);
     height: 54px;
     width: 54px;
     background-color: $white;
@@ -234,12 +236,15 @@ transform: rotate(-45deg) translate(0px, 0px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+
     h2 {
         margin: 0;
         text-align: center;
         font-weight: bold;
         font-size: 30px;
-        color: $border;
+        color: var(--border);
         line-height: 36px;
         padding-left: 44px;
         padding-right: 44px;
@@ -264,10 +269,11 @@ transform: rotate(-45deg) translate(0px, 0px);
 
 #searchbar {
     height: 22px;
-    background: $white;
+    background: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
     text-align: left;
     font-size: 16px;
-    color: #000000;
+    color: var(--black);
     font-weight: 300;
     width: 100%;
     border: none;
@@ -278,7 +284,7 @@ transform: rotate(-45deg) translate(0px, 0px);
 }
 
 #searchbar:active {
-    background: $white;
+    background: var(--white);
 }
 
 //INput background
@@ -298,7 +304,7 @@ input:-webkit-autofill:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid $border;
+    border: 1px solid var(--border);
     border-radius: 27px;
     margin-left: 20px;
     margin-right: 20px;
@@ -319,7 +325,7 @@ input:-webkit-autofill:focus {
 
 .trending {
     text-align: center;
-    color: $border;
+    color: var(--border);
     line-height: 25px;
     margin-top: 30px;
     margin-bottom: 48px;
@@ -332,7 +338,8 @@ input:-webkit-autofill:focus {
 // 3. Second Header Trending Gifos
 
 .second-header {
-    background-color: $grey;
+    background-color: var(--grey);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
     height: 430px;
     display: flex;
     flex-direction: column;
@@ -340,7 +347,7 @@ input:-webkit-autofill:focus {
     h3 {
         margin-top: 44px;
         font-size: 25px;
-        color: $border;
+        color: var(--border);
         line-height: 30px;
         font-weight: bold;
     }
@@ -348,7 +355,7 @@ input:-webkit-autofill:focus {
         margin-top: 9px;
         margin-bottom: 32px;
         font-size: 16px;
-        color: $black;
+        color: var(--black);
         text-align: center;
         line-height: 23px;
     }
@@ -374,15 +381,15 @@ input:-webkit-autofill:focus {
 
 footer {
     height: 149px;
-    padding-top: 47px;
+    //padding-top: 47px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 5px solid $border;
-    
+    border-bottom: 5px solid var(--border2);
+    background-color: var(--white);
     .first-foo {
         font-size: 15px;
-        color: $black;
+        color: var(--black);
         letter-spacing: 0;
     }
 
@@ -401,12 +408,12 @@ footer {
         }
     }
 
-    .second_foo {
+    .second-foo {
         font-size: 14px;
-        color: $black;
+        color: var(--black);
         letter-spacing: 0;
         line-height: 20px;
-        font-weight: bold;
+        
     }
 
 }

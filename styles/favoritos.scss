@@ -2,6 +2,10 @@
 
 //1. Favoritos
 
+body {
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
 .list-menu {
     li {
         .fav-link {
@@ -17,6 +21,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 .title-favoritos {
@@ -28,7 +34,7 @@
 
     h3 {
         font-size: 25px;
-        color: $border;
+        color: var(--border);
         line-height: 30px;
         font-weight: bold;
         margin-top: 6px;
@@ -61,4 +67,8 @@
 }
 
 
+.gifos-favoritos {
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
 

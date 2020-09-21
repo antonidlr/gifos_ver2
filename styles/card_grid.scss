@@ -3,10 +3,11 @@
 //5. Section Active Main Search 
 
 .active-search {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--white);
 
     hr {
         width: 338px;
@@ -125,7 +126,7 @@
     display: none;
     font-size: 40px;
     font-weight: bold;
-    color: $border;
+    color: var(--border);
     text-align: center;
     line-height: 30px;
     margin-bottom: 61px;

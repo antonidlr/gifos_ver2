@@ -1,65 +1,15 @@
 //1. Tomar el valor de busqueda para GIFOS
 
-let mainSearch = document.getElementById('searchbar');
-let bSearch = document.getElementById('search__1');
-const inputTitle = document.getElementsByClassName('active-title'); 
-
 const gifsTrend = []; //Array para Trending Carrusel
 const trendingSection = document.querySelector('.trending-gall');
 
-const activeSection = document.querySelector('.active-search');
-const barSuggestions = document.querySelector('.search-box-input');
-const closeInput = document.querySelector('.close-button');
-const inputSection = document.querySelector('.inputbar');
 const trendingText = document.querySelector('.trending');
-const lineDiv = document.querySelector('.lin-2');
-const titleGifs = document.getElementsByClassName('active-title');
-
-//Suggestions
-const btnSuggestion = document.getElementsByClassName('button-search-2');
-const btnText = document.getElementsByClassName('button-sug-1');
-
-// Get User Input Data GIFO
-
-function getUserInput () {
-    const inputValue = mainSearch.value;
-    return inputValue;
-};
-
-// Searching GIF on Click
-
-bSearch.addEventListener('click', () => {
-    
-    activeSection.style.display = 'flex';
-    searchGif(urlApi, getUserInput());
-    inputTitle[0].innerText = getUserInput();
-    hideMainbar();
-    showBarSuggestions();
-    
-
-});
-
-// Searchin GIF on ENTER
-
-mainSearch.addEventListener('keyup', (e) => {
-
-    if(e.which === 13) {
-        activeSection.style.display = 'flex';
-        searchGif(urlApi, getUserInput());
-        inputTitle[0].innerText = getUserInput();
-        hideMainbar();
-        showBarSuggestions();
-    }
-});
-
 
 
 //2. API from Giphy
 
 const apiKey = '3IXsNj5VZwIO7aLYIaWASyWQyLliVJk4';
-const urlApi = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=`;
 const urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25&rating=G`;
-const urlSuggestions = `https://api.giphy.com/v1/tags/related/`;
 
 // api.giphy.com/v1/tags/related/{hola}
 // https://api.giphy.com/v1/tags/related/hola
@@ -76,17 +26,6 @@ async function apiSearch (url, input) {
 
 //3. Mostrar en pantalla
 
-function searchGif(url, input) {
-    apiSearch(url, input)
-    .then((data) => {
-        const resp = data;
-        dataArrayScreen(resp.data);
-        console.log(resp.data);
-        console.log(resp.meta);
-        console.log(resp.meta.status);
-    });
-}
-
 function searchTren(url) {
     apiSearch(url, '')
     .then((data) => {
@@ -102,33 +41,6 @@ function searchTren(url) {
 }
 
 //4. Manipulating de DOM with APi Data response
-
-const dataArrayScreen = (resp) => {
-    const container = document.getElementsByClassName('container-search')[0];
-    container.innerHTML = "";
-    let num = 0;
-    addSuggestions(resp);
-    
-    resp.forEach(function(data){
-        const cardTest = createCard();
-        const imageUrl = data.images.original.url;
-        console.log(imageUrl);
-        cardTest.style.backgroundImage = "url('"+imageUrl+"')";
-
-        if(data.username == "") {
-            cardTest.getElementsByTagName('p')[0].innerText = 'GIPHY';
-        } else {
-            cardTest.getElementsByTagName('p')[0].innerText = data.username.toUpperCase();
-        }
-        cardTest.getElementsByTagName('h3')[0].innerText = data.title.split(' GIF')[0];
-
-        container.append(cardTest);
-        
-        num++;
-
-    })
-
-}
 
 const arrayTrending = (resp) => {
     /*
@@ -202,10 +114,10 @@ const createCard = () => {
 //6. Trending Section Gallery
 
 window.addEventListener('load', (event) => {
-
+    
     searchTren(urlTrending);
     trendingSection.innerHTML = "";
-  
+    
 });
 
 
@@ -219,55 +131,3 @@ function createTrendCards () {
     }
 }
 
-
-//7. INPUT CYCLE
-
-
-//.search-box-input
-//.lin-2
-//.active-title
-//.b-see-more
-//.search-again
-
-function hideMainbar () {
-    inputSection.style.display = 'none';
-    trendingText.style.display = 'none';
-
-}
-
-function showBarSuggestions () {
-    barSuggestions.style.display = 'flex';
-    lineDiv.style.display = 'block';
-    titleGifs[0].style.display = 'block';
-    mainSearch.style.marginLeft = '0px';
-    document.querySelector('.box-div-1').appendChild(mainSearch);
-}
-
-function closeSuggestions () {
-    barSuggestions.style.display = 'none';
-    inputSection.style.display = 'flex';
-}
-
-closeInput.addEventListener('click', () => {
-    closeSuggestions();
-})
-
-//8. Input Suggestions Search
-
-function addSuggestions (resp) {
-
-    for(let i = 0; i < 4; i++) {
-        
-        btnText[i].textContent = resp[i].title;
-    }
-
-}
-
-document.querySelectorAll('.btn').forEach(item => {
-    item.addEventListener('click', e => {
-        contProd++;
-        localStorage.setItem('contProd', contProd);
-        contador.innerText = " " + contProd;
-        //funcion que agrega los productos a un array
-    });
-});

@@ -1,3 +1,25 @@
+.theme-day {
+  --border: #572EE5;
+  --green:#5ED7C6;
+  --white: #FFFFFF;
+  --grey: #F3F5F8;
+  --grey-2: #CED7E1;
+  --black: #000000;
+  --icon: #CDD6E0;
+  --b-active: #9CAFC3;
+  --border2: #572EE5; }
+
+.theme-night {
+  --border: #FFFFFF;
+  --green:#5ED7C6;
+  --white: #37383C;
+  --grey: #222326;
+  --grey-2: #CED7E1;
+  --black: #FFFFFF;
+  --icon: #CDD6E0;
+  --b-active: #9CAFC3;
+  --border2: #000000; }
+
 .gif-screen {
   display: -webkit-box;
   display: -ms-flexbox;

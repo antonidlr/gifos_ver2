@@ -1,3 +1,25 @@
+.theme-day {
+  --border: #572EE5;
+  --green:#5ED7C6;
+  --white: #FFFFFF;
+  --grey: #F3F5F8;
+  --grey-2: #CED7E1;
+  --black: #000000;
+  --icon: #CDD6E0;
+  --b-active: #9CAFC3;
+  --border2: #572EE5; }
+
+.theme-night {
+  --border: #FFFFFF;
+  --green:#5ED7C6;
+  --white: #37383C;
+  --grey: #222326;
+  --grey-2: #CED7E1;
+  --black: #FFFFFF;
+  --icon: #CDD6E0;
+  --b-active: #9CAFC3;
+  --border2: #000000; }
+
 .list-menu li .mis-gifos-link {
   color: #9CAFC3; }
 
@@ -14,7 +36,10 @@
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  background-color: var(--white);
+  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out; }
 
 .title-favoritos {
   display: -webkit-box;
@@ -33,7 +58,7 @@
   margin-top: 11px; }
   .title-favoritos h3 {
     font-size: 25px;
-    color: #572EE5;
+    color: var(--border);
     line-height: 30px;
     font-weight: bold;
     margin-top: 6px; }
@@ -56,3 +81,8 @@
   .logo-favoritos img {
     width: 76px;
     height: auto; }
+
+.gifos-favoritos {
+  background-color: var(--white);
+  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out; }

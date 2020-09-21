@@ -5,11 +5,17 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+main {
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    padding-top: 40px;
+    
 }
 
 .video-recorder {
@@ -24,7 +30,7 @@ body {
 .box-video {
     width: 688px;
     height: 390px;
-    border: 1px solid $border;
+    border: 1px solid var(--border);
     margin-top: 4px;
 }
 
@@ -37,10 +43,10 @@ body {
     position: relative;
 
     p {
-        //display: none;
+        display: none;
         font-size: 15px;
         font-weight: bold;
-        color: $border;
+        color: var(--border);
         letter-spacing: 0;
         text-align: center;
         line-height: 22px;
@@ -103,7 +109,7 @@ body {
     .main-title-1 {
         
         font-size: 28px;
-        color: $border;
+        color: var(--border);
         font-weight: 700;
         text-align: center;
         line-height: 38px;
@@ -111,7 +117,7 @@ body {
 
     .main-text-1 {
         font-size: 16px;
-        color: $black;
+        color: var(--black);
         text-align: center;
         line-height: 29px;
 
@@ -157,7 +163,7 @@ body {
     hr {
         width: 796px;
         height: 6px;
-        background: $border;
+        background: var(--border);
         border-radius: 5px;
         border: none;
         margin-top: 15px;
@@ -170,21 +176,21 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
-        border: 1px solid $border;
+        border: 1px solid var(--border);
         border-radius: 50%;
         margin: 0 16px;
 
         h2{
             font-size: 18px;
-            color: $border;
+            color: var(--border);
             font-weight: 600;
         }
     }
 
     .selected-icon {
-        background-color: $border;
+        background-color: var(--border);
         h2 {
-            color: $white;
+            color: var(--white);
         }
     }
 
@@ -192,13 +198,13 @@ body {
         margin-top: 20px;
         width: 127px;
         
-        background: $white;
-        border: 1px solid $border;
+        background: var(--white);
+        border: 1px solid var(--border);
         border-radius: 25px;
         border-radius: 25px;
         font-size: 13px;
         font-weight: 600;
-        color: $border;
+        color: var(--border);
         letter-spacing: 0;
         text-align: center;
         padding: 18px 10px;
@@ -211,7 +217,7 @@ body {
         border-bottom: 2px solid $green;
         font-size: 14px;
         font-weight: bold;
-        color: $border;
+        color: var(--border);
         letter-spacing: 0;
         text-align: center;
         order: -1;
@@ -251,4 +257,104 @@ body {
 #record {
     width: 100%;
     height: 100%;
+}
+
+
+//Upload GIFO
+
+.upload {
+    width: 480px;
+    height: 320px;
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 16px;
+        font-weight: bold;
+        color: $white;
+        text-align: center;
+    }
+}
+
+.back-color {
+    
+    width: 100%;
+    height: 100%;
+    background-color: var(--border);
+    position: absolute;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+.container-button {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    position: absolute;
+}
+
+.up-container {
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+
+.loading {
+    background-image: url("../assets/loader.svg");
+    
+}
+
+.upload-ok {
+    background-image: url("../assets/check.svg");
+}
+
+.u-icon {
+    //display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    order: -1;
+    border: none;
+    width: 32px;
+    height: 32px;
+    margin: 10px 10px 0px 0;
+    background: $white;
+    border-radius: 6px;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.u-icon:hover {
+    opacity: 1;
+}
+
+.left-icon {
+    right: 42px;
+}
+
+.step-one {
+    display: none;
+}
+
+.step-two {
+    display: none;
+}
+
+footer {
+    padding-top: 47px;
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }

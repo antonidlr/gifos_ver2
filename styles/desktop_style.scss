@@ -1,5 +1,8 @@
 @import 'variables';
 
+body {
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
 
 
 //1. Header 
@@ -38,7 +41,7 @@
     li {
         a {
             font-size: 14px;
-            color: $border;
+            color: var(--border);
             letter-spacing: 0;
             text-align: center;
             text-transform: uppercase;
@@ -48,7 +51,7 @@
         .theme-button {
             height: 16px;
             font-size: 14px;
-            color: $border;
+            color: var(--border);
             letter-spacing: 0;
             text-align: center;
             text-transform: uppercase;
@@ -62,7 +65,9 @@
 }
 
 header {
+    background-color: var(--white);
     justify-content: space-between;
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
     nav {
         width: 50%;
     }
@@ -80,7 +85,7 @@ header {
     img {
         display: none;
     }
-    background-color: $border;
+    background-color: var(--border);
     background-image: url("../assets/button-crear-gifo_white.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -91,8 +96,8 @@ header {
     img {
         display: none;
     }
-    background-color: $b-active;
-    border: $b-active;
+    background-color: var(--b-active);
+    border: var(--b-active);
 }
 
 .logo {
@@ -169,7 +174,7 @@ header {
 .b-gallery {
     width: 40px;
     height: 40px;
-    border: 1px solid $border;
+    border: 1px solid var(--border);
     background-repeat: no-repeat;
     background-position: center;
     
@@ -179,6 +184,7 @@ header {
     background-image: url("../assets/button-left.svg");
     
 }
+
 
 .right {
     background-image: url("../assets/button-right.svg");
@@ -371,6 +377,8 @@ footer {
 .lin-2 {
     display: none;
 }
+
+
 
 
 

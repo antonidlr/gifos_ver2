@@ -7,7 +7,11 @@ const mainSection = recordSection.querySelector('.chapter');
 const timer = mainSection.getElementsByTagName('p')[0];
 const repeatTime = recordSection.querySelector('.chapter-repeat');
 
+const uploadOne = document.querySelector('.step-one');
+const uploadTwo = document.querySelector('.step-two');
+
 let imageGif;
+let newUrlGifo;
 
 
 //VIDEO RECORDING
@@ -71,6 +75,7 @@ bStart.addEventListener('click', () => {
         startRecording.addEventListener('click', () => {
             
             startRecording.style.display = 'none';
+            mainSection.getElementsByTagName('p')[0].style.display = 'block';
             let id = 'stop-recording';
             let texto = 'FINALIZAR';
             recordSection.appendChild(addButton(id, texto));
@@ -99,8 +104,9 @@ bStart.addEventListener('click', () => {
             }
 
             setTimeout(function(){ 
+                
                 if(gifRecorder != null) {
-                stopRecVideo();
+                    stopRecVideo();
                 }
 
                 stopRecording.style.display = 'none';
@@ -108,7 +114,44 @@ bStart.addEventListener('click', () => {
                 let texto = 'SUBIR GIFO';
                 recordSection.appendChild(addButton(id, texto));
                 addRepeatGif();
+                 
+                const repeatGif = document.querySelector('.chapter-repeat');
                 
+                repeatGif.addEventListener('click', () => {
+                    window.location.href = '../html/crear_gifos.html';
+                })
+
+                const uploadGif = document.getElementById('upload-recording');
+                
+                uploadGif.addEventListener('click', async () => {
+                    
+                    uploadOne.style.display = 'flex';
+                    mainText.appendChild(uploadOne);
+                    getIcons[1].classList.remove("selected-icon");
+                    getIcons[2].classList.add("selected-icon");
+                    uploadGif.style.opacity = '0';
+                    uploadGif.style.cursor = 'auto';
+                    repeatGif.style.display = 'none';
+
+                    await sendGif(gifRecorder.getBlob());
+                    gifRecorder.destroy();
+                    gifRecorder = null;
+
+                    uploadTwo.getElementsByClassName('u-icon')[0].addEventListener('click', () => {
+                        window.open(newUrlGifo);
+                    });
+
+                    uploadTwo.getElementsByClassName('u-icon')[1].addEventListener('click', async () => {
+                        copyGifoLink();
+                        console.log('inside COPY LINK');
+                    });
+
+
+                    
+                    
+                })
+
+               
                 
             }, 6000);
 
@@ -137,9 +180,9 @@ const stopRec = async (stream) => {
     
     imageGif.src = URL.createObjectURL(gifRecorder.getBlob());
 
-    await sendGif(gifRecorder.getBlob());
-    gifRecorder.destroy();
-    gifRecorder = null;
+    // await sendGif(gifRecorder.getBlob());
+    // gifRecorder.destroy();
+    // gifRecorder = null;
     
 };
 
@@ -243,12 +286,18 @@ const sendGif = async gif => {
 
     if (response.status === 200) {
 
+        setTimeout(()=> {
+            uploadOne.style.display = 'none';
+            uploadTwo.style.display = 'flex';
+            mainText.appendChild(uploadTwo);
+        }, 3000)
         //guardar en local storage
         localStorage.setItem("misgifos", saveLocal(dataResponse.data.id));
         
     }
     else {
         alert ('No se ha podido cargar tu gif. Vuelve a intentarlo');
+        window.open('../html/crear_gifos.html');
     }
 
 };
@@ -258,7 +307,7 @@ const sendGif = async gif => {
 const saveLocal = (gif) => {
     
    let urlGif = `https://media.giphy.com/media/${gif}/giphy.gif`;
-
+    newUrlGifo = urlGif;
     return urlGif;
 }
 
@@ -269,6 +318,22 @@ function addRepeatGif() {
     
     timer.style.display = 'none';
     repeatTime.style.display = 'block';
+
     
 }
 
+// Copy Link GIf Created Button 
+async function copyGifoLink () {
+    
+    if (!navigator.clipboard) {
+        // Clipboard API not available
+        return
+      }
+      
+      try {
+        await navigator.clipboard.writeText(newUrlGifo);
+        alert("Link de GIFo copiado: " + newUrlGifo);
+      } catch (err) {
+        console.error('Failed to copy!', err)
+      }
+}
