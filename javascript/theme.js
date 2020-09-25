@@ -3,10 +3,13 @@
 const body = document.body;
 const themeButton = document.querySelector('.theme-button');
 
-
 // Apply when reload 
 
 let theme = localStorage.getItem('themegifo');
+
+if(theme == null) {
+    localStorage.setItem('themegifo', themeButton.className);
+}
 
 if (theme) {
     body.classList.add(theme);

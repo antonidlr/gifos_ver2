@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 
     hr {
         width: 338px;
@@ -137,8 +138,10 @@
 // GIF CARD Search - size 260, 200 / margin 90, 12
 
 .container-search {
-    margin-left: 156px;
-    margin-right: 156px;
+    // margin-left: 156px;
+    // margin-right: 156px;
+    padding-left: 156px;
+    padding-right: 156px;
     padding-bottom: 78px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

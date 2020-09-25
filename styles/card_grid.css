@@ -7,7 +7,8 @@
   --black: #000000;
   --icon: #CDD6E0;
   --b-active: #9CAFC3;
-  --border2: #572EE5; }
+  --border2: #572EE5;
+  --hover1: #572EE5; }
 
 .theme-night {
   --border: #FFFFFF;
@@ -18,7 +19,8 @@
   --black: #FFFFFF;
   --icon: #CDD6E0;
   --b-active: #9CAFC3;
-  --border2: #000000; }
+  --border2: #000000;
+  --hover1: #9CAFC3; }
 
 .active-search {
   display: none;
@@ -32,7 +34,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: var(--white); }
+  background-color: var(--white);
+  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out; }
   .active-search hr {
     width: 338px; }
 
@@ -174,8 +178,8 @@
   margin-bottom: 61px; }
 
 .container-search {
-  margin-left: 156px;
-  margin-right: 156px;
+  padding-left: 156px;
+  padding-right: 156px;
   padding-bottom: 78px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

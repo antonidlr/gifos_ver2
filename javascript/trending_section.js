@@ -35,6 +35,19 @@ function searchTren(url) {
         arrayTrending(resp.data);
         if (resp.meta.status == 200) {
             createTrendCards();
+
+            const container = document.querySelector('.trending-gall');
+            container.querySelectorAll('.gif-card').forEach(item => {
+                
+                item.querySelector('.like-trend').addEventListener('click', event => {
+                    
+                    getLike(item, '.like-trend');
+                    
+                });
+                
+                addLikeClass(item, '.like-trend');
+            });
+
         }
     });
     
@@ -68,7 +81,7 @@ const arrayTrending = (resp) => {
 
 //5. Creating Card Showing Small GIF Screen Gallery After Search
 
-const createCard = () => {
+const createCard = (param) => {
     const div1 = document.createElement('div');
     const div2 = document.createElement('div');
     const div3 = document.createElement('div');
@@ -101,12 +114,13 @@ const createCard = () => {
     div4.classList.add('t-icons');
     div5.classList.add('title-card');
     button_1.classList.add('b-icon');
+    button_1.classList.add(param);
     button_2.classList.add('b-icon');
     button_3.classList.add('b-icon');
 
     button_1.getElementsByTagName('img')[0].src = "/assets/icon-fav-hover.svg";
-    button_2.getElementsByTagName('img')[0].src = "assets/icon-download.svg";
-    button_3.getElementsByTagName('img')[0].src = "assets/icon-max.svg";
+    button_2.getElementsByTagName('img')[0].src = "/assets/icon-download.svg";
+    button_3.getElementsByTagName('img')[0].src = "/assets/icon-max.svg";
 
     return div1;
 }
@@ -123,7 +137,7 @@ window.addEventListener('load', (event) => {
 
 function createTrendCards () {
     for(let i = 0; i < 3; i++) {
-        const cardTest = createCard();
+        const cardTest = createCard('like-trend');
         cardTest.style.backgroundImage = "url('" + gifsTrend[i].imageUrl + "')";
         cardTest.getElementsByTagName('p')[0].innerText = gifsTrend[i].user.toUpperCase();
         cardTest.getElementsByTagName('h3')[0].innerText = gifsTrend[i].title;
@@ -131,3 +145,55 @@ function createTrendCards () {
     }
 }
 
+
+
+//GET LIKE BUTTON
+
+function getLike (item, class1) {
+    let buttonLike = item.querySelector(class1);
+    let str = item.style.backgroundImage;
+    let urlGifFav2 = str.substring(str.indexOf('"')+ 1, str.lastIndexOf('"'));
+    let urlGifFav = str.substring(str.indexOf('media/')+ 6, str.lastIndexOf('/giphy'));
+    
+    if (localStorage.getItem('favoritosUrl') == null) {
+        localStorage.setItem('favoritosUrl'," ");
+    }
+    
+    if(localStorage.getItem('favoritosUrl') === " ") {
+        buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
+        favsArray.push(urlGifFav);
+        localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
+        
+    } 
+    else {
+        favsArray = JSON.parse(localStorage.getItem('favoritosUrl'));
+        if(favsArray.indexOf(urlGifFav) === -1) {
+            buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
+            favsArray.push(urlGifFav);
+            localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
+        } else {
+            buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-hover.svg';
+            favsArray.splice(favsArray.indexOf(urlGifFav), 1)
+            localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
+        }
+    }
+};
+
+function addLikeClass (item, class1) {
+    if(localStorage.getItem('favoritosUrl') != null) {
+        let buttonLike = item.querySelector(class1);
+        let str = item.style.backgroundImage;
+        let urlGifFav = str.substring(str.indexOf('"')+ 1, str.lastIndexOf('"'));
+        let urlGifFav2 = str.substring(str.indexOf('media/')+ 6, str.lastIndexOf('/giphy'));
+        let itemStorage = JSON.parse(localStorage.getItem('favoritosUrl'));
+       
+        for(let i = 0; i < itemStorage.length; i++ ){
+            
+            if(itemStorage[i] == urlGifFav2) {
+                buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
+                console.log(i);
+            }
+        }
+    }
+    
+}

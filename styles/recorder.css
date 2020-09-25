@@ -7,7 +7,8 @@
   --black: #000000;
   --icon: #CDD6E0;
   --b-active: #9CAFC3;
-  --border2: #572EE5; }
+  --border2: #572EE5;
+  --hover1: #572EE5; }
 
 .theme-night {
   --border: #FFFFFF;
@@ -18,7 +19,8 @@
   --black: #FFFFFF;
   --icon: #CDD6E0;
   --b-active: #9CAFC3;
-  --border2: #000000; }
+  --border2: #000000;
+  --hover1: #9CAFC3; }
 
 body {
   font-family: 'Open Sans', sans-serif; }

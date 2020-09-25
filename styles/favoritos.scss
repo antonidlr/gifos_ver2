@@ -31,6 +31,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 11px;
+    margin-bottom: 38px;
 
     h3 {
         font-size: 25px;
@@ -68,6 +69,7 @@ body {
 
 
 .gifos-favoritos {
+    
     background-color: var(--white);
     transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
