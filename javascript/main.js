@@ -23,8 +23,6 @@ const btnText = document.getElementsByClassName('button-sug-1');
 let favsArray = [];
 
 
-
-
 // Get User Input Data GIFO
 
 function getUserInput () {
@@ -320,33 +318,59 @@ document.querySelectorAll('.btn').forEach(item => {
 // names[0] = prompt("New member name?");
 // localStorage.setItem("names", JSON.stringify(names));
 
+let cardArray = [];
 
 function getLike (item, class1) {
     let buttonLike = item.querySelector(class1);
     let str = item.style.backgroundImage;
     let urlGifFav2 = str.substring(str.indexOf('"')+ 1, str.lastIndexOf('"'));
     let urlGifFav = str.substring(str.indexOf('media/')+ 6, str.lastIndexOf('/giphy'));
+
+    //USER and TITLe
+    let userName = item.querySelector('.title-card').getElementsByTagName('p')[0].innerHTML;
+    let titleGif = item.querySelector('.title-card').getElementsByTagName('h3')[0].innerHTML;
+    console.log(userName);
+    console.log(titleGif);
+
+    let cardObject = {
+        imageUrl: urlGifFav,
+        user: userName,
+        title: titleGif
+    };
     
     if (localStorage.getItem('favoritosUrl') == null) {
         localStorage.setItem('favoritosUrl'," ");
+        localStorage.setItem('favobject'," ");
     }
     
-    if(localStorage.getItem('favoritosUrl') === " ") {
+    if(localStorage.getItem('favoritosUrl') === " " || localStorage.getItem('favobject') === " ") {
         buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
         favsArray.push(urlGifFav);
         localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
+        cardArray.push(cardObject);
+        localStorage.setItem('favobject',JSON.stringify(cardArray));
         
     } 
     else {
         favsArray = JSON.parse(localStorage.getItem('favoritosUrl'));
-        if(favsArray.indexOf(urlGifFav) === -1) {
+        cardArray = JSON.parse(localStorage.getItem('favobject'));
+        
+       if(favsArray.indexOf(urlGifFav) === -1) {
             buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
             favsArray.push(urlGifFav);
             localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
+            cardArray.push(cardObject);
+            localStorage.setItem('favobject',JSON.stringify(cardArray));
         } else {
             buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-hover.svg';
-            favsArray.splice(favsArray.indexOf(urlGifFav), 1)
+            favsArray.splice(favsArray.indexOf(urlGifFav), 1);
+            
+            let index = cardArray.findIndex(x => x.imageUrl === urlGifFav);
+            cardArray.splice(cardArray.indexOf(index),1);
+            console.log('this is Index ' + index);
             localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
+            //cardArray.push(cardObject);
+            localStorage.setItem('favobject',JSON.stringify(cardArray));
         }
     }
 };
@@ -369,3 +393,17 @@ function addLikeClass (item, class1) {
     }
     
 }
+
+let arrayFavoritos = [
+    {imageUrl: "YmVNzDnboB0RQEpmLr", user: "GIPHY", title: "Mad Grumpy Cat"}, 
+    {imageUrl: "qShKy3KNSkzVIxBSiI", user: "METS", title: "Napoleon Dynamite Dancing"},
+    {imageUrl: "VtxmM6gtt9Li0", user: "MAUDIT", title: "Looking Bette Davis"}
+];
+
+arrayFavoritos.forEach((item) => {
+    if('VtxmM6gtt9Li0' == item.imageUrl) {
+        console.log(item.user);
+        console.log(item.title);
+    }
+   
+})

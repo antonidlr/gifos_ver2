@@ -10,6 +10,11 @@ const moviePic = document.querySelector('.movie');
 
 let theme = localStorage.getItem('themegifo');
 
+if(theme == null) {
+    localStorage.setItem('themegifo', body.className);
+}
+
+
 if (theme) {
     body.classList.add(theme);
     swapImages(theme);

@@ -8,7 +8,7 @@ const themeButton = document.querySelector('.theme-button');
 let theme = localStorage.getItem('themegifo');
 
 if(theme == null) {
-    localStorage.setItem('themegifo', themeButton.className);
+    localStorage.setItem('themegifo', body.className);
 }
 
 if (theme) {
