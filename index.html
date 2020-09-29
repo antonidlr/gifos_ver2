@@ -11,182 +11,188 @@
 </head>
 
 <body class="theme-day">
-    <header>
-        <div class="logo space">
-            <div>
-                <a href="/index.html"><img src="assets/logo-desktop-modo-noc.svg" alt="logo gifos"><h3>GIFOS</h3></a>
-            </div>
-            
-        </div>
-        <nav class="space">
-            <div class="nav-width">
-                <div id="menuToggle">
-                    <input type="checkbox" />
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <ul id="menu">
-                        <div class="list-menu">
-                            <li><button class="theme-button">Modo Nocturno</button></li>
-                            <hr>
-                        </div>
-                        
-                        <div class="list-menu">
-                            <li><a href="/html/favoritos.html">Favoritos</a></li>
-                            <hr>
-                        </div>
-                        
-                        <div class="list-menu">
-                            <li> <a href="/html/mis_gifos.html">Mis GIFOS</a> </li>
-                            <hr>
-                        </div>
-                        
-                        <div class="list-menu">
-                            <li><button class="crear-gif" onclick="window.location.href='/html/crear_gifos.html'"><img src="assets/button-crear-gifo.svg" alt="crear-gifo"></button></li>
-                        </div>
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="main-header">
-            <h2>Inspírate, busca, guarda, y crea <br> los mejores <span>GIFOS</span></h2>
-            <div class="ilustra-img">
-                <img src="assets/ilustra_header.svg" alt="gifos main image">
-            </div>
+    <div class="container-max">
 
-            <!-- BUSQUEDA PRINCIPAL GIFO -->
-           
-                <div class="inputbar">
-                    <input type="text" name="mainsearchbar" id="searchbar" placeholder="Busca GIFOS y más" autocomplete="off">
-                    <button id="search__1" class="search-button"></button>
+        <div class="container-submax">   
+            <header>
+                <div class="logo space">
+                    <div>
+                        <a href="/index.html"><img src="assets/logo-desktop-modo-noc.svg" alt="logo gifos"><h3>GIFOS</h3></a>
+                    </div>
+                    
+                </div>
+                <nav class="space">
+                    <div class="nav-width">
+                        <div id="menuToggle">
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <ul id="menu">
+                                <div class="list-menu">
+                                    <li><button class="theme-button">Modo Nocturno</button></li>
+                                    <hr>
+                                </div>
+                                
+                                <div class="list-menu">
+                                    <li><a href="/html/favoritos.html">Favoritos</a></li>
+                                    <hr>
+                                </div>
+                                
+                                <div class="list-menu">
+                                    <li> <a href="/html/mis_gifos.html">Mis GIFOS</a> </li>
+                                    <hr>
+                                </div>
+                                
+                                <div class="list-menu">
+                                    <li><button class="crear-gif" onclick="window.location.href='/html/crear_gifos.html'"><img src="assets/button-crear-gifo.svg" alt="crear-gifo"></button></li>
+                                </div>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <section class="main-header">
+                    <h2>Inspírate, busca, guarda, y crea <br> los mejores <span>GIFOS</span></h2>
+                    <div class="ilustra-img">
+                        <img src="assets/ilustra_header.svg" alt="gifos main image">
+                    </div>
+
+                    <!-- BUSQUEDA PRINCIPAL GIFO -->
+                
+                        <div class="inputbar">
+                            <input type="text" name="mainsearchbar" id="searchbar" placeholder="Busca GIFOS y más" autocomplete="off">
+                            <button id="search__1" class="search-button"></button>
+                        </div>
+                        
+                    
+                    <div class="trending">
+                        <h4>Trending:</h4>
+                        <p>Reactions, Entertainment, <br> Sports, Stickers, Artists</p>
+                    </div>
+                </section>
+                <section class="active-search">
+                    <div class="search-box-input">
+                        <div class="first-search-1">
+                            <div class="box-div-1">
+                                <button class="button-search-2 icon-s3"><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
+                                <!-- <input type="text"> -->
+                            </div>
+                            <button class="close-button"><img src="/assets/close.svg" alt="close"></button>
+                        </div>
+
+                        <hr class="line-div lin-1">
+
+                        <div class="suggestions-1">
+                            <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
+                            <button class="button-sug-1">Sugerencia 1</button>
+                        </div>
+
+                        <div class="suggestions-1">
+                            <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
+                            <button class="button-sug-1">Sugerencia 2</button>
+                        </div>
+
+                        <div class="suggestions-1">
+                            <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
+                            <button class="button-sug-1">Sugerencia 3</button>
+                        </div>
+
+                        <div class="suggestions-1">
+                            <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
+                            <button class="button-sug-1">Sugerencia 4</button>
+                        </div>
+
+                    </div>
+                    <hr class="line-div lin-2">
+
+                    <h2 class="active-title">Mascotas</h2>
+
+                    <div class="container-search">
+                        
+                        <!-- CARD GIFO TRENDING 
+                        <div class="gif-card gif-pic card__screen">
+                            <div class="second-gif"></div> 
+                            
+                            <div class="hover-gif">
+                                
+                                <div class="t-icons">
+                                    <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
+                                    <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
+                                </div>
+                                
+                                <div class="title-card">
+                                    <p id="user-gif">User</p>
+                                    <h3 id="title-gif">Título GIFO</h3>
+                                </div>
+                            </div>
+                            
+                        </div> -->
+                    </div>
+                    <button class="b-see-more">Ver Más</button>
+
+                    <div class="search-again">
+                        <h2 class="active-title">Lorem Ipsum</h2>
+                        <div class="logo-new-search">
+                            <img src="/assets/icon-busqueda-sin-resultado.svg" alt="search-again">
+                        </div>
+                        <h4>Intenta con otra búsqueda.</h4>
+
+                    </div>
+                </section>
+                <section class="second-header">
+                    <h3>Trending GIFOS</h3>
+                    <p>Mira los últimos <br>  GIFOS de nuestra comunidad.</p>
+                    <div class="trending-sec">
+                        <button class="b-gallery left"></button>
+                        <div class="trending-gall">
+                            
+                            <!-- CARD GIFO TRENDING -->
+                    <!--    <div class="gif-card gif-pic">
+                                
+                                <div class="second-gif"></div> 
+                                
+                                <div class="hover-gif">
+                                    
+                                    <div class="t-icons">
+                                        <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
+                                        <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
+                                        <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
+                                    </div>
+                                    
+                                    <div class="title-card">
+                                        <p id="user-gif">User</p>
+                                        <h3 id="title-gif">Título GIFO</h3>
+                                    </div>
+                                </div>
+                                
+                            </div> -->
+
+                            
+                        </div>
+                        <button class="b-gallery right"></button>
+                    </div>            
+                </section>
+            </main>
+            <footer>
+                
+                <p class="first-foo">Compartir en:</p>
+                
+                <div>
+                    <a href="https://www.facebook.com/antonio.delosrios.923" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/toniodlrios" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/antonidlr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/antonidlr" target="_blank"><i class="fab fa-github-alt"></i></a>
                 </div>
                 
-            
-            <div class="trending">
-                <h4>Trending:</h4>
-                <p>Reactions, Entertainment, <br> Sports, Stickers, Artists</p>
-            </div>
-        </section>
-        <section class="active-search">
-            <div class="search-box-input">
-                <div class="first-search-1">
-                    <div class="box-div-1">
-                        <button class="button-search-2 icon-s3"><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
-                        <!-- <input type="text"> -->
-                    </div>
-                    <button class="close-button"><img src="/assets/close.svg" alt="close"></button>
-                </div>
+                <p class="second-foo">	&copy; GIFOS 2020 All Rights Reserved.</p>
+            </footer>
 
-                <hr class="line-div lin-1">
-
-                <div class="suggestions-1">
-                    <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
-                    <button class="button-sug-1">Sugerencia 1</button>
-                </div>
-
-                <div class="suggestions-1">
-                    <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
-                    <button class="button-sug-1">Sugerencia 2</button>
-                </div>
-
-                <div class="suggestions-1">
-                    <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
-                    <button class="button-sug-1">Sugerencia 3</button>
-                </div>
-
-                <div class="suggestions-1">
-                    <button class="button-search-2 icon-s1 "><img src="/assets/icon-search-grey.svg" alt="icon-search"></button>
-                    <button class="button-sug-1">Sugerencia 4</button>
-                </div>
-
-            </div>
-            <hr class="line-div lin-2">
-
-            <h2 class="active-title">Mascotas</h2>
-
-            <div class="container-search">
-                 
-                <!-- CARD GIFO TRENDING 
-                <div class="gif-card gif-pic card__screen">
-                    <div class="second-gif"></div> 
-                    
-                    <div class="hover-gif">
-                        
-                        <div class="t-icons">
-                            <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
-                            <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
-                            <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
-                        </div>
-                        
-                        <div class="title-card">
-                            <p id="user-gif">User</p>
-                            <h3 id="title-gif">Título GIFO</h3>
-                        </div>
-                    </div>
-                    
-                </div> -->
-            </div>
-            <button class="b-see-more">Ver Más</button>
-
-            <div class="search-again">
-                <h2 class="active-title">Lorem Ipsum</h2>
-                <div class="logo-new-search">
-                    <img src="/assets/icon-busqueda-sin-resultado.svg" alt="search-again">
-                </div>
-                <h4>Intenta con otra búsqueda.</h4>
-
-            </div>
-        </section>
-        <section class="second-header">
-            <h3>Trending GIFOS</h3>
-            <p>Mira los últimos <br>  GIFOS de nuestra comunidad.</p>
-            <div class="trending-sec">
-                <button class="b-gallery left"></button>
-                <div class="trending-gall">
-                    
-                    <!-- CARD GIFO TRENDING -->
-            <!--    <div class="gif-card gif-pic">
-                        
-                        <div class="second-gif"></div> 
-                        
-                        <div class="hover-gif">
-                            
-                            <div class="t-icons">
-                                <button class="b-icon"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
-                                <button class="b-icon"><img src="assets/icon-download.svg" alt="icon fav"></button>
-                                <button class="b-icon"><img src="assets/icon-max.svg" alt="icon fav"></button>
-                            </div>
-                            
-                            <div class="title-card">
-                                <p id="user-gif">User</p>
-                                <h3 id="title-gif">Título GIFO</h3>
-                            </div>
-                        </div>
-                        
-                    </div> -->
-
-                    
-                </div>
-                <button class="b-gallery right"></button>
-            </div>            
-        </section>
-    </main>
-    <footer>
-        
-        <p class="first-foo">Compartir en:</p>
-        
-        <div>
-            <a href="https://www.facebook.com/antonio.delosrios.923" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/toniodlrios" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/antonidlr/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/antonidlr" target="_blank"><i class="fab fa-github-alt"></i></a>
-        </div>
-        
-        <p class="second-foo">	&copy; GIFOS 2020 All Rights Reserved.</p>
-    </footer>
+        </div> 
+    </div>
 
     <script defer src="/javascript/theme_index.js"></script>
     <script defer src="/javascript/main.js"></script>

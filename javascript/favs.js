@@ -14,7 +14,7 @@ if(localStorage.getItem('favoritosUrl') != null) {
         itemStorage.forEach(element => {
             let urlGif = `https://media.giphy.com/media/${element.imageUrl}/giphy.gif`;
             const cardTest = createCard('like');
-            console.log(urlGif);
+            
             cardTest.style.backgroundImage = "url('"+urlGif+"')";
             cardTest.getElementsByTagName('p')[0].innerHTML = element.user;
             cardTest.getElementsByTagName('h3')[0].innerHTML = element.title;
@@ -31,6 +31,14 @@ if(localStorage.getItem('favoritosUrl') != null) {
             });
 
             addLikeClass (item, '.like');
+
+            item.getElementsByClassName('b-icon')[1].addEventListener('click', () => {
+                let str2 = item.style.backgroundImage;
+                let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
+
+                window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
+
+            })
             
         });
     
@@ -39,6 +47,7 @@ if(localStorage.getItem('favoritosUrl') != null) {
             item.querySelector('.like-trend').addEventListener('click', event => {
                 
                 getLike(item, '.like-trend');
+    
                 
             });
 
@@ -49,16 +58,8 @@ if(localStorage.getItem('favoritosUrl') != null) {
     } else if (localStorage.getItem('favoritosUrl') == null || JSON.parse(localStorage.getItem('favoritosUrl')).length == 0) {
         containerFavs.classList.remove('container-search');
     }
-}
+};
 
-
-window.addEventListener('load', (event) => {
-    
-    if(localStorage.getItem('favoritosUrl') == null) {
-
-    }
-    
-});
 
 let cardArray = [];
 
@@ -71,8 +72,7 @@ function getLike (item, class1) {
     //USER and TITLe
     let userName = item.querySelector('.title-card').getElementsByTagName('p')[0].innerHTML;
     let titleGif = item.querySelector('.title-card').getElementsByTagName('h3')[0].innerHTML;
-    console.log(userName);
-    console.log(titleGif);
+    
 
     let cardObject = {
         imageUrl: urlGifFav,
@@ -109,7 +109,7 @@ function getLike (item, class1) {
             
             let index = cardArray.findIndex(x => x.imageUrl === urlGifFav);
             cardArray.splice(cardArray.indexOf(index),1);
-            console.log('this is Index ' + index);
+            
             localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
             localStorage.setItem('favobject',JSON.stringify(cardArray));
         }
@@ -128,7 +128,7 @@ function addLikeClass (item, class1) {
             
             if(itemStorage[i] == urlGifFav2) {
                 buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
-                console.log(i);
+                
             }
         }
     }

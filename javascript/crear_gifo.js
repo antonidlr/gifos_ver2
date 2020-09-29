@@ -285,14 +285,27 @@ const sendGif = async gif => {
     console.log(response.status);
 
     if (response.status === 200) {
-
+        saveLocal(dataResponse.data.id);
         setTimeout(()=> {
             uploadOne.style.display = 'none';
             uploadTwo.style.display = 'flex';
             mainText.appendChild(uploadTwo);
-        }, 3000)
+        }, 1000)
         //guardar en local storage
-        localStorage.setItem("misgifos", saveLocal(dataResponse.data.id));
+
+        if (localStorage.getItem('misgifos') == null) {
+            localStorage.setItem('misgifos'," ");
+        }
+
+        if(localStorage.getItem('misgifos') == " ") {
+            misGifosArray.push(dataResponse.data.id);
+            localStorage.setItem("misgifos", JSON.stringify(misGifosArray));
+        } else {
+            misGifosArray = JSON.parse(localStorage.getItem('misgifos'));
+            misGifosArray.push(dataResponse.data.id);
+            localStorage.setItem("misgifos", JSON.stringify(misGifosArray));
+        }
+       
         
     }
     else {
@@ -303,6 +316,8 @@ const sendGif = async gif => {
 };
 
 // 6.1 Guardar en Local Storage
+
+let misGifosArray = [];
 
 const saveLocal = (gif) => {
     

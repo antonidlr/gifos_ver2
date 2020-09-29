@@ -1,7 +1,7 @@
 @import 'variables';
 
-//1. Screen Gifo
 
+//1. Screen Gifo
 
 .gif-screen {
 
@@ -67,6 +67,10 @@
     opacity: 1;
 }
 
+.b-icon-3 {
+    margin-right: 400px;
+}
+
 .icons-gif {
     display: flex;
 }
@@ -81,6 +85,7 @@
 //2.1 Button close Gifo Screen
 
 .close-button {
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: flex-end;
