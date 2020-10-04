@@ -132,6 +132,38 @@ header {
     width: 551px;
 }
 
+.container_bar {
+    width: 100%;
+    display: flex;
+}
+
+.activebar {
+    height: 50px;
+    //height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_sugg {
+    width: 100%;
+    //display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 //3. Trending Section ..............cambiar Tamaño Height!!!!
 .second-header {
     height: 640px;
@@ -436,6 +468,7 @@ footer {
 
 .lin-2 {
     display: none;
+
 }
 
 
@@ -446,4 +479,4 @@ footer {
 // Card Grid
 
 @import 'card_grid';
-@import 'card_style';
+

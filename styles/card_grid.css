@@ -46,10 +46,13 @@
   margin: 0; }
 
 .lin-1 {
+  width: 505px;
+  margin-top: 10px;
   margin-bottom: 14px; }
 
 .lin-2 {
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  margin-top: 55px; }
 
 .search-box-input {
   width: 551px;
@@ -89,11 +92,9 @@
     border: none; }
 
 .close-button {
+  display: none;
   width: 24px;
   height: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -101,7 +102,9 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 18px;
-  background: #FFFFFF;
+  background-color: var(--white);
+  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
   border: none; }
 
 .first-search-1 {
@@ -116,7 +119,17 @@
 
 .icon-s1 {
   margin-left: 20px;
-  font-size: 15px; }
+  width: 19px;
+  height: 19px;
+  padding: 2px;
+  background-color: var(--white);
+  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out; }
+  .icon-s1 img {
+    width: 100%;
+    display: block;
+    -o-object-fit: contain;
+       object-fit: contain; }
 
 .suggestions-1 {
   width: 100%;
@@ -133,7 +146,9 @@
   .suggestions-1 .button-sug-1 {
     color: #9CAFC3;
     border: none;
-    background: #FFFFFF; }
+    background-color: var(--white);
+    -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out; }
 
 .button-search-2 {
   display: -webkit-box;
@@ -145,11 +160,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: none;
-  background: #FFFFFF; }
+  border: none; }
 
 .icon-s3 {
-  margin-right: 4px; }
+  display: none;
+  margin-left: 19px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--white);
+  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out; }
+
+#searchbar {
+  margin-left: 54px; }
+
+.inputfield {
+  margin-left: 33px; }
 
 ::-webkit-input-placeholder {
   color: #9CAFC3; }

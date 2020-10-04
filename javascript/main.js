@@ -20,13 +20,61 @@ const subDiv = document.querySelector('.container-submax');
 
 //Suggestions
 const btnSuggestion = document.getElementsByClassName('button-search-2');
+const iconSearch = document.querySelector('.icon-s3');
 const btnText = document.getElementsByClassName('button-sug-1');
+const contSuggestion = document.querySelector('.container_sugg');
+const contBar = document.querySelector('.activebar');
+
 
 //Array Favoritos
 let favsArray = [];
 
 let inputGifArray = [];
 let trendingGifArray = [];
+
+// container_sugg
+//close-button
+//icon-s3
+
+mainSearch.addEventListener('input', () => {
+    
+    if(mainSearch.value.length > 2) {
+        bSearch.style.display = 'none';
+        
+        iconSearch.style.display = 'block';
+        closeInput.style.display = 'flex';
+        contSuggestion.style.display = 'flex';
+        mainSearch.style.marginLeft = '11px';
+        contBar.style.height = '200px';
+        getSuggestions();
+        const btnsSearch = document.querySelectorAll('.suggestions-1');
+        
+        btnsSearch.forEach((item)=> {
+                item.addEventListener('click', event => {
+                    const textSugg = item.querySelector('.button-sug-1').innerText;
+                    displayScreen(textSugg);
+                })
+        })
+        
+    }
+    
+})
+
+function closeSuggestions () {
+    
+    bSearch.style.display = 'block';
+    
+    iconSearch.style.display = 'none';
+    closeInput.style.display = 'none';
+    contSuggestion.style.display = 'none';
+    mainSearch.style.marginLeft = '54px';
+    contBar.style.height = '50px';
+}
+
+closeInput.addEventListener('click', () => {
+    
+    closeSuggestions();
+})
 
 // Get User Input Data GIFO
 
@@ -37,14 +85,9 @@ function getUserInput () {
 
 // Searching GIF on Click
 
-bSearch.addEventListener('click', () => {
-    inputGifArray = [];
-    activeSection.style.display = 'flex';
-    searchGif(urlApi, getUserInput());
-    inputTitle[0].innerText = getUserInput();
-    hideMainbar();
-    showBarSuggestions();
+iconSearch.addEventListener('click', () => {
     
+    displayScreen(getUserInput());
     
 });
 
@@ -53,27 +96,49 @@ bSearch.addEventListener('click', () => {
 mainSearch.addEventListener('keyup', (e) => {
     
     if(e.which === 13) {
-        inputGifArray = [];
-        activeSection.style.display = 'flex';
-        searchGif(urlApi, getUserInput());
-        inputTitle[0].innerText = getUserInput();
-        hideMainbar();
-        showBarSuggestions();
+    
+        displayScreen(getUserInput());
+        
     }
 });
 
 
+function displayScreen (param) {
+    inputGifArray = [];
+    activeSection.style.display = 'flex';
+    searchGif(urlApi, param);
+    inputTitle[0].innerText = param;
+    hideMainbar();
+    showBarSuggestions();
+}
 
 //2. API from Giphy
 
 const apiKey = '3IXsNj5VZwIO7aLYIaWASyWQyLliVJk4';
+const afterKey = `?api_key=${apiKey}`;
 const urlApi = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=`;
 const urlTrending = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25&rating=G`;
 const urlSuggestions = `https://api.giphy.com/v1/tags/related/`;
 
-// api.giphy.com/v1/tags/related/{hola}
-// https://api.giphy.com/v1/tags/related/hola
-// https://api.giphy.com/v1/tags/related/hola?api_key=3IXsNj5VZwIO7aLYIaWASyWQyLliVJk4
+
+// Suggestions from API
+
+
+
+function getSuggestions () {
+    
+    if(mainSearch.value.length > 2) {
+        apiSearch(urlSuggestions + mainSearch.value + afterKey, " ")
+        .then((data) => {
+            const arraySugg = data.data;
+            for(let num=0; num < 4; num++) {
+                btnText[num].innerText = arraySugg[num].name;
+            }
+            
+        })
+    }
+}
+
 
 async function apiSearch (url, input) {
     
@@ -97,24 +162,41 @@ function searchGif(url, input) {
         
         if(resp.meta.status === 200){
             const container = document.querySelector('.container-search');
-            
+            let num = 0;
             container.querySelectorAll('.gif-card').forEach(item => {  
                 
                 addLikeClass (item, '.like');
-
+                
                 item.querySelector('.like').addEventListener('click', event => {
                     
                     getLike(item, '.like');
                     
                 });
-
+                
                 item.getElementsByClassName('b-icon')[1].addEventListener('click', () => {
                     let str2 = item.style.backgroundImage;
                     let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
-                    console.log(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
                     window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
-
+                    
                 })
+
+                 // GIF SCREEN MAX WINDOW 
+                 item.getElementsByClassName('b-icon')[2].addEventListener('click', () => {
+                    
+                    console.log('hola from screenmax');
+                    let str2 = item.style.backgroundImage;
+                    let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
+                    let num = 0;
+                    
+                    inputGifArray.forEach((item) => {
+                        if(urlGifFav == item.imageUrl) {
+                            getScreenMax(num, inputGifArray);
+                        }
+                        num ++;
+                    })
+                    
+                })
+                num++;
                 
             });
             
@@ -142,14 +224,12 @@ function searchTren(url) {
                     getLike(item, '.like-trend');
                     
                 });
-
+                
                 item.getElementsByClassName('b-icon')[1].addEventListener('click', () => {
                     let str2 = item.style.backgroundImage;
                     let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
-
-                    //console.log(`https://media.giphy.com/media/JhZcAuGjuDmZq/giphy.gif`);
                     window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
-
+                    
                 })
                 
                 // GIF SCREEN MAX WINDOW 
@@ -157,20 +237,15 @@ function searchTren(url) {
                     
                     let str2 = item.style.backgroundImage;
                     let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
-                    console.log(urlGifFav);
-                    console.log(gifsTrend);
                     let num = 0;
-
+                    
                     gifsTrend.forEach((item) => {
-                            if(urlGifFav == item.imageid) {
-                                console.log(item.user);
-                                console.log(item.title);
-                                console.log('index to use ' + num);
-                                getScreenMax(num);
-                            }
-                           num ++;
+                        if(urlGifFav == item.imageid) {
+                            getScreenMax(num, gifsTrend);
+                        }
+                        num ++;
                     })
-
+                    
                 })
                 num++;
             });
@@ -185,13 +260,14 @@ const dataArrayScreen = (resp) => {
     const container = document.getElementsByClassName('container-search')[0];
     container.innerHTML = "";
     
-    addSuggestions(resp);
+    //addSuggestions(resp);
     
     resp.forEach(function(data){
         let cardObject = {
             imageUrl: data.id,
             user: '',
-            title: ''
+            title: '',
+            imageid: data.id,
         };
         const cardTest = createCard('like');
         const imageUrl = data.images.original.url;
@@ -207,7 +283,7 @@ const dataArrayScreen = (resp) => {
         }
         cardTest.getElementsByTagName('h3')[0].innerText = data.title.split(' GIF')[0];
         cardObject.title = data.title.split(' GIF')[0];
-
+        
         container.append(cardTest);
         
         inputGifArray.push(cardObject);
@@ -237,8 +313,6 @@ const arrayTrending = (resp) => {
         gifObject.imageid = data.id;
         gifsTrend.push(gifObject);
     })
-    
-    console.log(resp.length);
 }
 
 //5. Creating Card Showing Small GIF Screen Gallery After Search
@@ -318,27 +392,19 @@ function createTrendCards () {
 //.search-again
 
 function hideMainbar () {
-    inputSection.style.display = 'none';
+    
     trendingText.style.display = 'none';
     
 }
 
 function showBarSuggestions () {
-    barSuggestions.style.display = 'flex';
+    
     lineDiv.style.display = 'block';
     titleGifs[0].style.display = 'block';
-    mainSearch.style.marginLeft = '0px';
-    document.querySelector('.box-div-1').appendChild(mainSearch);
+    
 }
 
-function closeSuggestions () {
-    barSuggestions.style.display = 'none';
-    inputSection.style.display = 'flex';
-}
 
-closeInput.addEventListener('click', () => {
-    closeSuggestions();
-})
 
 //8. Input Suggestions Search
 
@@ -380,13 +446,11 @@ function getLike (item, class1) {
     let str = item.style.backgroundImage;
     let urlGifFav2 = str.substring(str.indexOf('"')+ 1, str.lastIndexOf('"'));
     let urlGifFav = str.substring(str.indexOf('media/')+ 6, str.lastIndexOf('/giphy'));
-
+    
     //USER and TITLe
     let userName = item.querySelector('.title-card').getElementsByTagName('p')[0].innerHTML;
     let titleGif = item.querySelector('.title-card').getElementsByTagName('h3')[0].innerHTML;
-    console.log(userName);
-    console.log(titleGif);
-
+   
     let cardObject = {
         imageUrl: urlGifFav,
         user: userName,
@@ -410,7 +474,7 @@ function getLike (item, class1) {
         favsArray = JSON.parse(localStorage.getItem('favoritosUrl'));
         cardArray = JSON.parse(localStorage.getItem('favobject'));
         
-       if(favsArray.indexOf(urlGifFav) === -1) {
+        if(favsArray.indexOf(urlGifFav) === -1) {
             buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
             favsArray.push(urlGifFav);
             localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
@@ -422,7 +486,7 @@ function getLike (item, class1) {
             
             let index = cardArray.findIndex(x => x.imageUrl === urlGifFav);
             cardArray.splice(cardArray.indexOf(index),1);
-            console.log('this is Index ' + index);
+            
             localStorage.setItem('favoritosUrl', JSON.stringify(favsArray));
             localStorage.setItem('favobject',JSON.stringify(cardArray));
         }
@@ -436,12 +500,12 @@ function addLikeClass (item, class1) {
         let urlGifFav = str.substring(str.indexOf('"')+ 1, str.lastIndexOf('"'));
         let urlGifFav2 = str.substring(str.indexOf('media/')+ 6, str.lastIndexOf('/giphy'));
         let itemStorage = JSON.parse(localStorage.getItem('favoritosUrl'));
-       
+        
         for(let i = 0; i < itemStorage.length; i++ ){
             
             if(itemStorage[i] == urlGifFav2) {
                 buttonLike.getElementsByTagName('img')[0].src = '../assets/icon-fav-active.svg';
-                console.log(i);
+                
             }
         }
     }
@@ -459,49 +523,34 @@ function addLikeClass (item, class1) {
 //         console.log(item.user);
 //         console.log(item.title);
 //     }
-   
+
 // })
 
 
 
 // Download GIFO
 
-function getScreenMax (index) {
-
-      
+function getScreenMax (index, array) {
+    
     subDiv.remove();
     globalDiv.innerHTML = screenMax;
     let closeWindow = document.getElementsByClassName('button-icon')[0];
     const previewGif = document.getElementsByClassName('b-gallery')[0];
-    const nextGif = document.getElementsByClassName('b-gallery')[1]
-    closeWindow.addEventListener('click', () => {
-        globalDiv.innerHTML = " ";
-        globalDiv.appendChild(subDiv);
-    })
-
-    const divMAx = document.querySelector('.container-max');
-    const gifPic = document.querySelector('.gifo-image-max');
-    let urlGif = `https://media.giphy.com/media/${gifsTrend[index].imageid}/giphy.gif`;
-    // gifPic.style.backgroundImage = "url('"+urlGif+"')";
-    // divMAx.getElementsByTagName('p')[0].innerHTML = gifsTrend[index].user;
-    // divMAx.getElementsByTagName('p')[1].innerHTML = gifsTrend[index].title;
-    addGifPic(index);
+    const nextGif = document.getElementsByClassName('b-gallery')[1];
+    let divMAx = document.querySelector('.container-max');
+    let gifPic = document.querySelector('.gifo-image-max');
+    let urlGif;
+    
     let numleft = index;
     let numright = index;
-    let limit = gifsTrend.length;
-
-    gifPic.style.backgroundImage = "url('"+urlGif+"')";
-    divMAx.getElementsByTagName('p')[0].innerHTML = gifsTrend[index].user;
-    divMAx.getElementsByTagName('p')[1].innerHTML = gifsTrend[index].title;
-
+    let limit = array.length;
+    
+    addGifPic(index);
+    
     previewGif.addEventListener('click', () => {
         if(numright != 0) {
             numright = numright - 1;
-            urlGif = `https://media.giphy.com/media/${gifsTrend[numright].imageid}/giphy.gif`;
-            gifPic.style.backgroundImage = "url('"+urlGif+"')";
-            divMAx.getElementsByTagName('p')[0].innerHTML = gifsTrend[numright].user;
-            divMAx.getElementsByTagName('p')[1].innerHTML = gifsTrend[numright].title;
-            console.log('index ' + numright);
+            addGifPic(numright);
             numleft = numright
         } else {
             numright = 0;
@@ -509,15 +558,11 @@ function getScreenMax (index) {
         }
         
     })
-
+    
     nextGif.addEventListener('click', () => {
         if(numleft < limit - 1) {
             numleft = numleft + 1;
-            urlGif = `https://media.giphy.com/media/${gifsTrend[numleft].imageid}/giphy.gif`;
-            gifPic.style.backgroundImage = "url('"+urlGif+"')";
-            divMAx.getElementsByTagName('p')[0].innerHTML = gifsTrend[numleft].user;
-            divMAx.getElementsByTagName('p')[1].innerHTML = gifsTrend[numleft].title;
-            console.log('index ' + numleft);
+            addGifPic(numleft);
             numright = numleft
         } else {
             numleft = limit;
@@ -525,10 +570,18 @@ function getScreenMax (index) {
         }
         
     })
-
-}
-
-function addGifPic (index) {
+    
+    closeWindow.addEventListener('click', () => {
+        globalDiv.innerHTML = " ";
+        globalDiv.appendChild(subDiv);
+    })
+    
+    function addGifPic (index) {
+        urlGif = `https://media.giphy.com/media/${array[index].imageid}/giphy.gif`;
+        gifPic.style.backgroundImage = "url('"+urlGif+"')";
+        divMAx.getElementsByTagName('p')[0].innerHTML = array[index].user;
+        divMAx.getElementsByTagName('p')[1].innerHTML = array[index].title;
+    }
     
 }
 
@@ -537,26 +590,29 @@ function addGifPic (index) {
 
 const screenMax = `
 <div class="close-2-button">
-            <button class="button-icon b-icon-2 b-icon-3"><img src="/assets/button-close.svg" alt="icon fav"></button>
-        </div>
-        <section class="gif-screen">
-            <button class="b-gallery left"></button>
-            <div class="gifo-image-max">
-                
-            </div>
-            <button class="b-gallery right"></button>    
-        </section>
-        <section class="gif-icons-screen">
-            <div class="container-icons">
-                <div class="gif-icons-text">
-                    <p class="text-p1 size-s1">User</p>
-                    <p class="text-p1 size-s2">Título GIFO</p>
-                </div>
-                <div class="icons-gif">
-                    <button class="button-icon b-icon-2"><img src="/assets/icon-fav-hover.svg" alt="icon fav"></button>
-                    <button class="button-icon b-icon-2"><img src="/assets/icon-download.svg" alt="icon fav"></button>
-                </div>
-            </div>
-        </section>`;
+<button class="button-icon b-icon-2 b-icon-3"><img src="/assets/button-close.svg" alt="icon fav"></button>
+</div>
+<section class="gif-screen">
+<button class="b-gallery left"></button>
+<div class="gifo-image-max">
+
+</div>
+<button class="b-gallery right"></button>    
+</section>
+<section class="gif-icons-screen">
+<div class="container-icons">
+<div class="gif-icons-text">
+<p class="text-p1 size-s1">User</p>
+<p class="text-p1 size-s2">Título GIFO</p>
+</div>
+<div class="icons-gif">
+<button class="button-icon b-icon-2"><img src="/assets/icon-fav-hover.svg" alt="icon fav"></button>
+<button class="button-icon b-icon-2"><img src="/assets/icon-download.svg" alt="icon fav"></button>
+</div>
+</div>
+</section>`;
+
+
+// Trending NEXT and PREVIEW
 
 

@@ -23,11 +23,14 @@
 }
 
 .lin-1 {
+    width: 505px;
+    margin-top: 10px;
     margin-bottom: 14px;
 }
 
 .lin-2 {
     margin-bottom: 80px;
+    margin-top: 55px;
 }
 
 .search-box-input {
@@ -62,13 +65,15 @@
 }
 
 .close-button {
+    display: none;
     width: 24px;
     height: 24px;
-    display: flex;
+    //display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 18px;
-    background: $white;
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
     border: none;
 }
 
@@ -81,7 +86,16 @@
 
 .icon-s1 {
     margin-left: 20px;
-    font-size: 15px;
+    width: 19px;
+    height: 19px;
+    padding: 2px;
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    img {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+    }
     
 
 }
@@ -96,7 +110,8 @@
     .button-sug-1 {
         color: $b-active;
         border: none;
-        background: $white;
+        background-color: var(--white);
+        transition: background 500ms ease-in-out, color 1000ms ease-in-out;
     }
 }
 
@@ -105,13 +120,27 @@
     justify-content: center;
     align-items: center;
     border: none;
-    background: $white;
+    
     
 }
 
 .icon-s3 {
-    margin-right: 4px;
+    display: none;
+    margin-left: 19px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
+
+#searchbar {
+    margin-left: 54px;
+}
+
+.inputfield {
+    margin-left: 33px;
+}
+
 
 ::placeholder {
     color: $b-active;
