@@ -4,24 +4,26 @@ const contentDivEmpty = document.querySelector('save-screen-favoritos');
 
 let favsArray = [];
 let gifsFavs = [];
-let itemStorage2 = JSON.parse(localStorage.getItem('favobject'));
 
-itemStorage2.forEach((item2) => {
-    let gifObject2 = {
-        imageUrl: 'url',
-        user: 'User',
-        title: 'Title',
-        imageid: 'id'
-    }
-    gifObject2.imageUrl = item2.imageUrl;
-    gifObject2.user = item2.user;
-    gifObject2.title = item2.title;
-    gifObject2.imageid = item2.imageUrl;
-
-    gifsFavs.unshift(gifObject2);
-})
 
 if(localStorage.getItem('favoritosUrl') != null) {
+    let itemStorage2 = JSON.parse(localStorage.getItem('favobject'));
+
+    itemStorage2.forEach((item2) => {
+        let gifObject2 = {
+            imageUrl: 'url',
+            user: 'User',
+            title: 'Title',
+            imageid: 'id'
+        }
+        gifObject2.imageUrl = item2.imageUrl;
+        gifObject2.user = item2.user;
+        gifObject2.title = item2.title;
+        gifObject2.imageid = item2.imageUrl;
+    
+        gifsFavs.unshift(gifObject2);
+    })
+
     if(JSON.parse(localStorage.getItem('favoritosUrl')).length != 0) {
 
         containerFavs.classList.add('container-search');

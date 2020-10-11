@@ -4,6 +4,8 @@ let mainSearch = document.getElementById('searchbar');
 let bSearch = document.getElementById('search__1');
 const inputTitle = document.getElementsByClassName('active-title');
 const btnSeeMore = document.querySelector('.b-see-more');
+const searchAgain = document.querySelector('.search-again');
+const textTrending = document.querySelector('.trending');
 
 const gifsTrend = []; //Array para Trending Carrusel
 const trendingSection = document.querySelector('.trending-gall');
@@ -165,46 +167,56 @@ function searchGif(url, input) {
         console.log(resp.data);
         console.log(resp.meta);
         console.log(resp.meta.status);
+       
         
         if(resp.meta.status === 200){
-            const container = document.querySelector('.container-search');
-            showFirstSearch();
-            container.querySelectorAll('.gif-card').forEach(item => {  
-                
-                addLikeClass (item, '.like');
-                
-                item.querySelector('.like').addEventListener('click', event => {
+            if(resp.data.length == 0) {
+                btnSeeMore.style.display = 'none';
+                textTrending.style.display = 'block';
+                searchAgain.style.display = 'flex';
+            } else {
+                textTrending.style.display = 'none';
+                searchAgain.style.display = 'none';
+                const container = document.querySelector('.container-search');
+                showFirstSearch();
+                container.querySelectorAll('.gif-card').forEach(item => {  
                     
-                    getLike(item, '.like');
+                    addLikeClass (item, '.like');
                     
-                });
-                
-                item.getElementsByClassName('b-icon')[1].addEventListener('click', () => {
-                    let str2 = item.style.backgroundImage;
-                    let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
-                    window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
+                    item.querySelector('.like').addEventListener('click', event => {
+                        
+                        getLike(item, '.like');
+                        
+                    });
                     
-                })
-                
-                // GIF SCREEN MAX WINDOW 
-                item.getElementsByClassName('b-icon')[2].addEventListener('click', () => {
-                    
-                    console.log('hola from screenmax');
-                    let str2 = item.style.backgroundImage;
-                    let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
-                    let num = 0;
-                    
-                    inputGifArray.forEach((item) => {
-                        if(urlGifFav == item.imageUrl) {
-                            getScreenMax(num, inputGifArray);
-                        }
-                        num ++;
+                    item.getElementsByClassName('b-icon')[1].addEventListener('click', () => {
+                        let str2 = item.style.backgroundImage;
+                        let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
+                        window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
+                        
                     })
                     
-                })
-                //num++;
-                
-            });
+                    // GIF SCREEN MAX WINDOW 
+                    item.getElementsByClassName('b-icon')[2].addEventListener('click', () => {
+                        
+                        console.log('hola from screenmax');
+                        let str2 = item.style.backgroundImage;
+                        let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
+                        let num = 0;
+                        
+                        inputGifArray.forEach((item) => {
+                            if(urlGifFav == item.imageUrl) {
+                                getScreenMax(num, inputGifArray);
+                            }
+                            num ++;
+                        })
+                        
+                    })
+                    //num++;
+                    
+                });
+
+            }
             
         }
     });
@@ -275,43 +287,48 @@ const dataArrayScreen = (resp) => {
     if(inputGifArrayNodes.length > 0) {
         inputGifArrayNodes = [];
     }
-    
-    resp.forEach(function(data){
-        let cardObject = {
-            imageUrl: data.id,
-            user: '',
-            title: '',
-            imageid: data.id,
-        };
-        const cardTest = createCard('like');
-        const imageUrl = data.images.original.url;
-        
-        cardTest.style.backgroundImage = "url('"+imageUrl+"')";
-        
-        if(data.username == "") {
-            cardTest.getElementsByTagName('p')[0].innerText = 'GIPHY';
-            cardObject.user = 'GIPHY';
-        } else {
-            cardTest.getElementsByTagName('p')[0].innerText = data.username.toUpperCase();
-            cardObject.user = data.username.toUpperCase();
-        }
-        cardTest.getElementsByTagName('h3')[0].innerText = data.title.split(' GIF')[0];
-        cardObject.title = data.title.split(' GIF')[0];
-        
-        //container.append(cardTest);
-        inputGifArray.push(cardObject);
-        inputGifArrayNodes.push(cardTest);
-        
-    })
-    
+
+    if(resp.length == 0) {
+        btnSeeMore.style.display = 'none';
+        searchAgain.style.display = 'flex';
+    } else {
+        resp.forEach(function(data){
+            let cardObject = {
+                imageUrl: data.id,
+                user: '',
+                title: '',
+                imageid: data.id,
+            };
+            const cardTest = createCard('like');
+            const imageUrl = data.images.original.url;
+            
+            cardTest.style.backgroundImage = "url('"+imageUrl+"')";
+            
+            if(data.username == "") {
+                cardTest.getElementsByTagName('p')[0].innerText = 'GIPHY';
+                cardObject.user = 'GIPHY';
+            } else {
+                cardTest.getElementsByTagName('p')[0].innerText = data.username.toUpperCase();
+                cardObject.user = data.username.toUpperCase();
+            }
+            cardTest.getElementsByTagName('h3')[0].innerText = data.title.split(' GIF')[0];
+            cardObject.title = data.title.split(' GIF')[0];
+            
+            //container.append(cardTest);
+            inputGifArray.push(cardObject);
+            inputGifArrayNodes.push(cardTest);
+            
+        })
+    }
 }
 
 function showFirstSearch () {
-    const container = document.getElementsByClassName('container-search')[0];
-    btnSeeMore.style.display = 'block';
-    for(let num = 0; num < 12; num ++) {
-        container.append(inputGifArrayNodes[num]);
-    }
+   
+        const container = document.getElementsByClassName('container-search')[0];
+        btnSeeMore.style.display = 'block';
+        for(let num = 0; num < 12; num ++) {
+            container.append(inputGifArrayNodes[num]);
+        }
 }
 
 

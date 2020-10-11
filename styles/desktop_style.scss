@@ -123,7 +123,7 @@ header {
             display: none;
         }
         p {
-            margin-bottom: 102px;
+            //margin-bottom: 102px;
         }
     }
 }
@@ -167,6 +167,7 @@ header {
 //3. Trending Section ..............cambiar Tamaño Height!!!!
 .second-header {
     height: 640px;
+    margin-top: 102px;
 
     h3 {
         margin-top: 65px;
@@ -439,7 +440,7 @@ footer {
     
     h4 {
         margin-top: 28px;
-        margin-bottom: 150px;
+        margin-bottom: 48px;
         font-size: 25px;
         font-weight: bold;
         color: $green;
