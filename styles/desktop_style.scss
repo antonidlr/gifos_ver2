@@ -2,7 +2,7 @@
 @import 'gifo_screen_style';
 
 body {
-    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    transition: background 100ms ease-in-out, color 200ms ease-in-out;
 }
 
 
@@ -108,6 +108,7 @@ header {
 //2. Search Section
 
 .main-header {
+    padding-bottom: 102px;
     h2 {
         margin-top: 75px;
         margin-bottom: 25px;
@@ -167,7 +168,7 @@ header {
 //3. Trending Section ..............cambiar Tamaño Height!!!!
 .second-header {
     height: 640px;
-    margin-top: 102px;
+    //margin-top: 102px;
 
     h3 {
         margin-top: 65px;
@@ -200,6 +201,7 @@ header {
 }
 
 .trending-gall {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

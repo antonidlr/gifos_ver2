@@ -2,6 +2,12 @@
 
 //5. Section Active Main Search 
 
+.container_bar {
+    
+    margin-top: 0px;
+    margin-bottom: 0px; 
+}
+
 .active-search {
     display: none;
     flex-direction: column;
@@ -24,7 +30,6 @@
 
 .lin-1 {
     width: 505px;
-    margin-top: 10px;
     margin-bottom: 14px;
 }
 

@@ -131,8 +131,8 @@
           align-items: center; }
 
 body {
-  -webkit-transition: background 500ms ease-in-out, color 1000ms ease-in-out;
-  transition: background 500ms ease-in-out, color 1000ms ease-in-out; }
+  -webkit-transition: background 100ms ease-in-out, color 200ms ease-in-out;
+  transition: background 100ms ease-in-out, color 200ms ease-in-out; }
 
 #menuToggle input {
   display: none; }
@@ -222,16 +222,18 @@ header {
 .logo {
   margin-left: 134px; }
 
-.main-header h2 {
-  margin-top: 75px;
-  margin-bottom: 25px;
-  font-size: 40px;
-  line-height: 50px; }
-.main-header .trending {
-  margin-top: 73px;
-  margin-bottom: 0px; }
-  .main-header .trending br {
-    display: none; }
+.main-header {
+  padding-bottom: 102px; }
+  .main-header h2 {
+    margin-top: 75px;
+    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 50px; }
+  .main-header .trending {
+    margin-top: 73px;
+    margin-bottom: 0px; }
+    .main-header .trending br {
+      display: none; }
 
 .inputbar {
   width: 551px; }
@@ -284,8 +286,7 @@ header {
           align-items: center; }
 
 .second-header {
-  height: 640px;
-  margin-top: 102px; }
+  height: 640px; }
   .second-header h3 {
     margin-top: 65px; }
   .second-header p {
@@ -305,6 +306,7 @@ header {
   margin-left: 4px; }
 
 .trending-gall {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -555,6 +557,10 @@ footer {
   --border2: #000000;
   --hover1: #9CAFC3; }
 
+.container_bar {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
 .active-search {
   display: none;
   -webkit-box-orient: vertical;
@@ -580,7 +586,6 @@ footer {
 
 .lin-1 {
   width: 505px;
-  margin-top: 10px;
   margin-bottom: 14px; }
 
 .lin-2 {

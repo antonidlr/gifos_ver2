@@ -27,6 +27,7 @@ const iconSearch = document.querySelector('.icon-s3');
 const btnText = document.getElementsByClassName('button-sug-1');
 const contSuggestion = document.querySelector('.container_sugg');
 const contBar = document.querySelector('.activebar');
+const containerBar = document.querySelector('.container_bar');
 let igif = 1;
 
 
@@ -51,6 +52,7 @@ mainSearch.addEventListener('input', () => {
         contSuggestion.style.display = 'flex';
         mainSearch.style.marginLeft = '11px';
         contBar.style.height = '200px';
+        containerBar.classList.add('center-item');
         getSuggestions();
         
     }
@@ -79,7 +81,7 @@ function closeSuggestions () {
 }
 
 closeInput.addEventListener('click', () => {
-    
+    containerBar.classList.remove('center-item');
     closeSuggestions();
 })
 
