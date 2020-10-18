@@ -416,7 +416,7 @@ const createCard = (param) => {
     button_2.classList.add('b-icon');
     button_3.classList.add('b-icon');
     
-    button_1.getElementsByTagName('img')[0].src = "/assets/icon-fav-hover.svg";
+    button_1.getElementsByTagName('img')[0].src = "assets/icon-fav-hover.svg";
     button_2.getElementsByTagName('img')[0].src = "assets/icon-download.svg";
     button_3.getElementsByTagName('img')[0].src = "assets/icon-max.svg";
     
@@ -697,7 +697,7 @@ function addLikeGifMax (item) {
 
 const screenMax = `
 <div class="close-2-button">
-<button class="button-icon b-icon-2 b-icon-3"><img src="/assets/button-close.svg" alt="icon fav"></button>
+<button class="button-icon b-icon-2 b-icon-3"><img src="assets/button-close.svg" alt="icon fav"></button>
 </div>
 <section class="gif-screen">
 <button class="b-gallery left"></button>
@@ -713,8 +713,8 @@ const screenMax = `
 <p class="text-p1 size-s2">Título GIFO</p>
 </div>
 <div class="icons-gif">
-<button class="button-icon b-icon-2 like"><img src="/assets/icon-fav-hover.svg" alt="icon fav"></button>
-<button class="button-icon b-icon-2"><img src="/assets/icon-download.svg" alt="icon fav"></button>
+<button class="button-icon b-icon-2 like"><img src="assets/icon-fav-hover.svg" alt="icon fav"></button>
+<button class="button-icon b-icon-2"><img src="assets/icon-download.svg" alt="icon fav"></button>
 </div>
 </div>
 </section>`;
