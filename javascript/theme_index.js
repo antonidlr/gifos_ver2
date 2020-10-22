@@ -48,14 +48,14 @@ themeButton.addEventListener('click', () => {
 function swapImages (theme) {
 
     if(theme === 'theme-night') {
-        buttonSearch.style.backgroundImage = "url(../gifos_ver2/assets/icon-search_white.svg)";
-        buttonCreate.src = "../gifos_ver2/assets/button-crear-gifo_white.svg";
+        buttonSearch.style.backgroundImage = "url(../assets/icon-search_white.svg)";
+        buttonCreate.src = "../assets/button-crear-gifo_white.svg";
         // buttonArrow[0].style.backgroundImage = "url(../assets/button-left-white.svg)";
         // buttonArrow[1].style.backgroundImage = "url(../assets/button-right-white.svg)";
  
     } else if(theme === 'theme-day') {
-        buttonSearch.style.backgroundImage = "url(../gifos_ver2/assets/icon-search.svg)";
-        buttonCreate.src = "../gifos_ver2/assets/button-crear-gifo.svg";
+        buttonSearch.style.backgroundImage = "url(../assets/icon-search.svg)";
+        buttonCreate.src = "../assets/button-crear-gifo.svg";
         // buttonArrow[0].style.backgroundImage = "url(../assets/button-left.svg)";
         // buttonArrow[1].style.backgroundImage = "url(../assets/button-right.svg)";
     }

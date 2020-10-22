@@ -55,8 +55,11 @@ if(localStorage.getItem('favoritosUrl') != null) {
             item.getElementsByClassName('b-icon')[1].addEventListener('click', () => {
                 let str2 = item.style.backgroundImage;
                 let urlGifFav = str2.substring(str2.indexOf('media/')+ 6, str2.lastIndexOf('/giphy'));
-
-                window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
+                let urlimage = `https://media.giphy.com/media/${urlGifFav}/giphy.gif`;
+                let title = item.getElementsByTagName('h3')[0].innerText;
+                
+                downloadGif(urlimage, title);
+                //window.open(`https://media.giphy.com/media/${urlGifFav}/giphy.gif`);
 
             })
 
@@ -98,6 +101,24 @@ if(localStorage.getItem('favoritosUrl') != null) {
     }
 };
 
+//Dowload IMAGE to PC
+
+function downloadGif (url, title) {
+    (async () => {
+        //create new a element
+        let a = document.createElement('a');
+        // get image as blob
+        let response = await fetch(url);
+        let file = await response.blob();
+        // use download attribute https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Attributes
+        a.download = title;
+        a.href = window.URL.createObjectURL(file);
+        //store download url in javascript https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes#JavaScript_access
+        a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+        //click on element to start download
+        a.click();
+      })();
+}
 
 
 
